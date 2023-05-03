@@ -1,0 +1,35 @@
+{
+  "name": "dagil-2022-2023-practica-3-egp00044",
+  "version": "1.0.0",
+  "description": "pr3",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "ssh"
+  ],
+  "author": "elena",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^4.6.0"
+  },
+  "dependencies": {
+    "balanced-match": "^1.0.2",
+    "brace-expansion": "^1.1.11",
+    "concat-map": "^0.0.1",
+    "fs.realpath": "^1.0.0",
+    "glob": "^7.2.3",
+    "inflight": "^1.0.6",
+    "inherits": "^2.0.4",
+    "jasmine-core": "^4.6.0",
+    "minimatch": "^3.1.2",
+    "once": "^1.4.0",
+    "path-is-absolute": "^1.0.1",
+    "wrappy": "^1.0.2"
+  }
+}
