@@ -565,7 +565,7 @@ Para ejecutar la aplicación **SIN COMPROBACIÓN EN EL NAVEGADOR** de TDD, tendr
 **En la parte inferior del fichero *index.html***:
 ```
     <script src="js/front-end-spec.js"></script>
-    <script src="js/ms-plantilla-spec.js"></script>
+    <script src="js/ms-hipica-spec.js"></script>
 ```
 
 Hay que tener en cuenta que NO ES un fichero JavaScript, sino que es un fichero HTML; por tanto, para comentar esas líneas hay que usar: ```<!--``` y ```-->```.
