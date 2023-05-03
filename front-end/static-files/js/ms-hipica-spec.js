@@ -10,8 +10,8 @@
 // Constantes para usar en las pruebas
 const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
 const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
-const TITULO_HOME = "Plantilla Home"
-const TITULO_ACERCA_DE = "Plantilla Acerca de"
+const TITULO_HOME = "hipica Home"
+const TITULO_ACERCA_DE = "hipica Acerca de"
 const TITULO_IMPRIME_NOMBRES_JINETES = "Listados de nombres de todos los jinetes"
 const TITULO_IMPRIME_DATOS_JINETES = "Listados de los datos de todos los jinetes"
 const TITULO_IMPRIME_DATOS_UN_JINETE = "Mostrar datos de un jinete"
@@ -332,27 +332,27 @@ describe("Hipica.imprimePorGanado: ", function() {
 
 
 //EXPECTS PARA LAS TABLAS
-describe("Hipica.plantillaTablaJinetes.pie ", function () {
+describe("Hipica.tablaJinetes.pie ", function () {
     it("debería devolver las etiquetas HTML para el pie de tabla cuando se le pasa un valor nulo", function() {
-        expect(Hipica.plantillaTablaJinetes.pie).not.toBe(null);
+        expect(Hipica.tablaJinetes.pie).not.toBe(null);
     });
     it("debería devolver las etiquetas HTML para el pie de tabla cuando se le pasa un valor vacío", function() {
-        expect(Hipica.plantillaTablaJinetes.pie).not.toBe("");
+        expect(Hipica.tablaJinetes.pie).not.toBe("");
     });
     it("debería devolver las etiquetas HTML para el pie de tabla",
         function () {
-            expect(Hipica.plantillaTablaJinetes.pie).toBe("</tbody> </table>");
+            expect(Hipica.tablaJinetes.pie).toBe("</tbody> </table>");
         });
 });
 
-describe("Hipica.plantillaTablaJinetes.cabecera", function() {
+describe("Hipica.tablaJinetes.cabecera", function() {
     it('existe la función cabecera', () => {
-        expect(Hipica.plantillaTablaJinetes.cabecera).toBeDefined();
+        expect(Hipica.tablaJinetes.cabecera).toBeDefined();
     });
 });
 
-describe("Hipica.plantillaTablaJinetes.cabeceraJinetesTodos", function() {
+describe("Hipica.tablaJinetes.cabeceraJinetesTodos", function() {
     it('existe la función cabeceraJinetesTodos', () => {
-        expect(Hipica.plantillaTablaJinetes.cabeceraJinetesTodos).toBeDefined();
+        expect(Hipica.tablaJinetes.cabeceraJinetesTodos).toBeDefined();
     });
 });
