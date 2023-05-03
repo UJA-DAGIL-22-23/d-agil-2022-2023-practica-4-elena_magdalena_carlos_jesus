@@ -8,19 +8,19 @@
 "use strict";
 
 /// Creo el espacio de nombres
-let Plantilla = {};
+let Hipica = {};
 
-Plantilla.jieneteSeleccionado = null
+Hipica.jieneteSeleccionado = null
 
 // Plantilla de datosDescargados vacíos
-Plantilla.datosDescargadosNulos = {
+Hipica.datosDescargadosNulos = {
     mensaje: "Datos Descargados No válidos",
     autor: "",
     email: "",
     fecha: ""
 }
 
-Plantilla.plantillaTags = {
+Hipica.plantillaTags = {
     "ID": "### ID ###",
     "NOMBRE_JINETE": "### NOMBRE_JINETE ###",
     "NOMBRE": "### NOMBRE ###",
@@ -52,7 +52,7 @@ Plantilla.plantillaTags = {
  * @param {string} ruta Ruta a descargar
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Plantilla.descargarRuta = async function (ruta, callBackFn) {
+Hipica.descargarRuta = async function (ruta, callBackFn) {
     let response = null
 
     // Intento conectar con el microservicio Plantilla
@@ -78,7 +78,7 @@ Plantilla.descargarRuta = async function (ruta, callBackFn) {
 /**
  * Función principal para mostrar los datos enviados por la ruta "home" de MS Plantilla
  */
-Plantilla.mostrarHome = function (datosDescargados) {
+Hipica.mostrarHome = function (datosDescargados) {
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
@@ -94,7 +94,7 @@ Plantilla.mostrarHome = function (datosDescargados) {
 /**
  * Función principal para mostrar los datos enviados por la ruta "acerca de" de MS Plantilla
  */
-Plantilla.mostrarAcercaDe = function (datosDescargados) {
+Hipica.mostrarAcercaDe = function (datosDescargados) {
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
@@ -122,10 +122,10 @@ Plantilla.mostrarAcercaDe = function (datosDescargados) {
 
 /***************************************************************************************************/
 
-Plantilla.jineteComoTabla = function (jinete) {
-    return Plantilla.plantillaTablaJinetes.cabecera
-        + Plantilla.plantillaTablaJinetes.actualiza(jinete)
-        + Plantilla.plantillaTablaJinetes.pie;
+Hipica.jineteComoTabla = function (jinete) {
+    return Hipica.plantillaTablaJinetes.cabecera
+        + Hipica.plantillaTablaJinetes.actualiza(jinete)
+        + Hipica.plantillaTablaJinetes.pie;
 }
 
 /**
@@ -134,16 +134,16 @@ Plantilla.jineteComoTabla = function (jinete) {
  * @param {jinete} jinete Objeto con los datos de la jinete
  * @returns Una cadena con la tabla que tiene ya los datos actualizados
  */
-Plantilla.jineteComoFormulario = function (jinete) {
-    return Plantilla.plantillaFormularioJinete.actualiza( jinete );
+Hipica.jineteComoFormulario = function (jinete) {
+    return Hipica.plantillaFormularioJinete.actualiza( jinete );
 }
 
 /***************************************************************************************************/
 
 
-Plantilla.plantillaFormularioJinete = {}
+Hipica.plantillaFormularioJinete = {}
 
-Plantilla.plantillaFormularioJinete.formulario = `
+Hipica.plantillaFormularioJinete.formulario = `
 <form method='post' action=''>
 <table width="100%" class="listado_jinetes">
     <thead>
@@ -162,19 +162,19 @@ Plantilla.plantillaFormularioJinete.formulario = `
 
     </thead>
     <tbody>
-        <tr title="${Plantilla.plantillaTags.ID}">
-            <td><input type="text" class="form-persona-elemento disabled" disabled id="form-persona-id" required value="${Plantilla.plantillaTags.ID}" name="id_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-nombre"  value="${Plantilla.plantillaTags.NOMBRE}" name="nombre_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-apellidos"  value="${Plantilla.plantillaTags.APELLIDOS}" name="apellidos_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-altura_jinete"  value="${Plantilla.plantillaTags.ALTURA_JINETE}" name="altura_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-datos_caballo" required value="${Plantilla.plantillaTags.DATOS_CABALLO}" name="datos_caballo"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-fecha_nacimiento" required value="${Plantilla.plantillaTags.FECHA_NACIMIENTO}" name="fecha_nacimiento"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-nombre_club_actual" required value="${Plantilla.plantillaTags.NOMBRE_CLUB_ACTUAL}" name="nombre_club_actual"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-direccion_club" required value="${Plantilla.plantillaTags.DIRECCION_CLUB}" name="direccion_club"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-tipo_competicion" required value="${Plantilla.plantillaTags.TIPO_COMPETICION}" name="tipo_competicion"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-años_federado" required value="${Plantilla.plantillaTags.AÑOS_FEDERADO}" name="años_federado"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-numero_participaciones" required value="${Plantilla.plantillaTags.NUMERO_PARTICIPACIONES}" name="numero_participaciones"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-numero_torneos_ganados" required value="${Plantilla.plantillaTags.NUMERO_TORNEOS_GANADOS}" name="numero_torneos_ganados"/></td>
+        <tr title="${Hipica.plantillaTags.ID}">
+            <td><input type="text" class="form-persona-elemento disabled" disabled id="form-persona-id" required value="${Hipica.plantillaTags.ID}" name="id_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-nombre"  value="${Hipica.plantillaTags.NOMBRE}" name="nombre_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-apellidos"  value="${Hipica.plantillaTags.APELLIDOS}" name="apellidos_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-altura_jinete"  value="${Hipica.plantillaTags.ALTURA_JINETE}" name="altura_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-datos_caballo" required value="${Hipica.plantillaTags.DATOS_CABALLO}" name="datos_caballo"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-fecha_nacimiento" required value="${Hipica.plantillaTags.FECHA_NACIMIENTO}" name="fecha_nacimiento"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-nombre_club_actual" required value="${Hipica.plantillaTags.NOMBRE_CLUB_ACTUAL}" name="nombre_club_actual"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-direccion_club" required value="${Hipica.plantillaTags.DIRECCION_CLUB}" name="direccion_club"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-tipo_competicion" required value="${Hipica.plantillaTags.TIPO_COMPETICION}" name="tipo_competicion"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-años_federado" required value="${Hipica.plantillaTags.AÑOS_FEDERADO}" name="años_federado"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-numero_participaciones" required value="${Hipica.plantillaTags.NUMERO_PARTICIPACIONES}" name="numero_participaciones"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-numero_torneos_ganados" required value="${Hipica.plantillaTags.NUMERO_TORNEOS_GANADOS}" name="numero_torneos_ganados"/></td>
         </tr>
     </tbody>
 </table>
@@ -183,14 +183,14 @@ Plantilla.plantillaFormularioJinete.formulario = `
 /***************************************************************************************************/
 
 // Plantilla para poner los datos de varios jinetes dentro de una tabla
-Plantilla.plantillaTablaJinetes = {}
+Hipica.plantillaTablaJinetes = {}
 
 /**
  *  CABECERA DE LA TABLA DE LOS NOMBRES DE JINETES
  * Muestra los nombres de los campos sobre la información que vamos a representar de los jinetes
  * @type {string}
  */
-Plantilla.plantillaTablaJinetes.cabecera = `<table width="100%" class="listado_jinetes">
+Hipica.plantillaTablaJinetes.cabecera = `<table width="100%" class="listado_jinetes">
     <thead>
         <th width="5%">ID</th>
         <th width="15%">Nombre</th>
@@ -206,7 +206,7 @@ Plantilla.plantillaTablaJinetes.cabecera = `<table width="100%" class="listado_j
  * Muestra los nombres de los campos sobre la información que vamos a representar de los jinetes
  * @type {string}
  */
-Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos = `<table width="100%" class="listado_jinetes">
+Hipica.plantillaTablaJinetes.cabeceraJinetesTodos = `<table width="100%" class="listado_jinetes">
     <thead>
         <th width="5%">ID</th>
         <th width="15%">Nombre</th>
@@ -231,14 +231,14 @@ Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos = `<table width="100%" clas
  * @param {plantilla} p Datos del plantilla a mostrar
  * @returns Cadena conteniendo todo el elemento TR que muestra el plantilla.
  */
-Plantilla.plantillaTablaJinetes.cuerpo =
-    `<tr title="${Plantilla.plantillaTags.ID}">
-    <td>${Plantilla.plantillaTags.ID}</td>
-    <td>${Plantilla.plantillaTags.NOMBRE}</td>
-    <td>${Plantilla.plantillaTags.APELLIDOS}</td>
+Hipica.plantillaTablaJinetes.cuerpo =
+    `<tr title="${Hipica.plantillaTags.ID}">
+    <td>${Hipica.plantillaTags.ID}</td>
+    <td>${Hipica.plantillaTags.NOMBRE}</td>
+    <td>${Hipica.plantillaTags.APELLIDOS}</td>
     
     <td>
-        <div><a href="javascript:Plantilla.mostrar('${Plantilla.plantillaTags.ID}')" className="opcion-secundaria mostrar">Mostrar</a></div>    
+        <div><a href="javascript:Plantilla.mostrar('${Hipica.plantillaTags.ID}')" className="opcion-secundaria mostrar">Mostrar</a></div>    
     </td>
     
 </tr> `;
@@ -249,23 +249,23 @@ Plantilla.plantillaTablaJinetes.cuerpo =
  * @param {plantilla} p Datos del plantilla a mostrar
  * @returns Cadena conteniendo todo el elemento TR que muestra el plantilla.
  */
-Plantilla.plantillaTablaJinetes.cuerpoJinetesTodos=
-    `<tr title="${Plantilla.plantillaTags.ID}">
-    <td>${Plantilla.plantillaTags.ID}</td>
-    <td>${Plantilla.plantillaTags.NOMBRE}</td>
-    <td>${Plantilla.plantillaTags.APELLIDOS}</td>
-    <td>${Plantilla.plantillaTags.ALTURA_JINETE}</td>
-    <td>${Plantilla.plantillaTags.DATOS_CABALLO}</td>     
-    <td>${Plantilla.plantillaTags.FECHA_NACIMIENTO}</td>   
-    <td>${Plantilla.plantillaTags.NOMBRE_CLUB_ACTUAL}</td>   
-    <td>${Plantilla.plantillaTags.DIRECCION_CLUB }</td>   
-    <td>${Plantilla.plantillaTags.TIPO_COMPETICION }</td>   
-    <td>${Plantilla.plantillaTags.AÑOS_FEDERADO}"</td>
-    <td>${Plantilla.plantillaTags["NUMERO_PARTICIPACIONES"]}</td>
-    <td>${Plantilla.plantillaTags["NUMERO_TORNEOS_GANADOS"]}</td>
+Hipica.plantillaTablaJinetes.cuerpoJinetesTodos=
+    `<tr title="${Hipica.plantillaTags.ID}">
+    <td>${Hipica.plantillaTags.ID}</td>
+    <td>${Hipica.plantillaTags.NOMBRE}</td>
+    <td>${Hipica.plantillaTags.APELLIDOS}</td>
+    <td>${Hipica.plantillaTags.ALTURA_JINETE}</td>
+    <td>${Hipica.plantillaTags.DATOS_CABALLO}</td>     
+    <td>${Hipica.plantillaTags.FECHA_NACIMIENTO}</td>   
+    <td>${Hipica.plantillaTags.NOMBRE_CLUB_ACTUAL}</td>   
+    <td>${Hipica.plantillaTags.DIRECCION_CLUB }</td>   
+    <td>${Hipica.plantillaTags.TIPO_COMPETICION }</td>   
+    <td>${Hipica.plantillaTags.AÑOS_FEDERADO}"</td>
+    <td>${Hipica.plantillaTags["NUMERO_PARTICIPACIONES"]}</td>
+    <td>${Hipica.plantillaTags["NUMERO_TORNEOS_GANADOS"]}</td>
     
     <td>
-        <div><a href="javascript:Plantilla.mostrar('${Plantilla.plantillaTags.ID}')" className="opcion-secundaria mostrar">Mostrar</a></div>    
+        <div><a href="javascript:Plantilla.mostrar('${Hipica.plantillaTags.ID}')" className="opcion-secundaria mostrar">Mostrar</a></div>    
     </td>
     
 </tr> `;
@@ -274,7 +274,7 @@ Plantilla.plantillaTablaJinetes.cuerpoJinetesTodos=
 /**
  * PIE DE LAS TABLAS
  * @returns {string}
- */Plantilla.plantillaTablaJinetes.pie = `</tbody> </table>`;
+ */Hipica.plantillaTablaJinetes.pie = `</tbody> </table>`;
 
 /***************************************************************************************************/
 
@@ -284,20 +284,20 @@ Plantilla.plantillaTablaJinetes.cuerpoJinetesTodos=
  * @param {jinete} jinete Objeto con los datos del jinete que queremos escribir en el TR
  * @returns La plantilla del cuerpo de la tabla con los datos actualizados
  */
-Plantilla.sustituyeTags = function (plantilla, jinetes) {
+Hipica.sustituyeTags = function (plantilla, jinetes) {
     return plantilla
-        .replace(new RegExp(Plantilla.plantillaTags.ID, 'g'), jinetes.ref['@ref'].id)
-        .replace(new RegExp(Plantilla.plantillaTags.NOMBRE  , 'g'), jinetes.data.nombre_jinete.nombre )
-        .replace(new RegExp(Plantilla.plantillaTags.APELLIDOS  , 'g'), jinetes.data.nombre_jinete.apellidos )
-        .replace(new RegExp(Plantilla.plantillaTags.ALTURA_JINETE  , 'g'), jinetes.data.altura_jinete + " cm" )
-        .replace(new RegExp(Plantilla.plantillaTags.DATOS_CABALLO  , 'g'), jinetes.data.datos_caballo.nombre_caballo + " Edad: " + jinetes.data.datos_caballo.edad  + " Sexo: "+ jinetes.data.datos_caballo.sexo )
-        .replace(new RegExp(Plantilla.plantillaTags.FECHA_NACIMIENTO  , 'g'), jinetes.data.fecha_nacimiento.dia + "/" + jinetes.data.fecha_nacimiento.mes + "/" + jinetes.data.fecha_nacimiento.año)
-        .replace(new RegExp(Plantilla.plantillaTags.NOMBRE_CLUB_ACTUAL  , 'g'), jinetes.data.nombre_club_actual )
-        .replace(new RegExp(Plantilla.plantillaTags.DIRECCION_CLUB , 'g'), jinetes.data.direccion_club.calle + ", " + jinetes.data.direccion_club.numero + ", " + jinetes.data.direccion_club.localidad + ", " + jinetes.data.direccion_club.provincia + ", " + jinetes.data.direccion_club.pais)
-        .replace(new RegExp(Plantilla.plantillaTags.TIPO_COMPETICION , 'g'), jinetes.data.tipo_competicion)
-        .replace(new RegExp(Plantilla.plantillaTags.AÑOS_FEDERADO, 'g'), jinetes.data.años_federado)
-        .replace(new RegExp(Plantilla.plantillaTags.NUMERO_PARTICIPACIONES, 'g'), jinetes.data.numero_particiapciones_torneo)
-        .replace(new RegExp(Plantilla.plantillaTags.NUMERO_TORNEOS_GANADOS, 'g'), jinetes.data.numero_torneos_ganados)
+        .replace(new RegExp(Hipica.plantillaTags.ID, 'g'), jinetes.ref['@ref'].id)
+        .replace(new RegExp(Hipica.plantillaTags.NOMBRE  , 'g'), jinetes.data.nombre_jinete.nombre )
+        .replace(new RegExp(Hipica.plantillaTags.APELLIDOS  , 'g'), jinetes.data.nombre_jinete.apellidos )
+        .replace(new RegExp(Hipica.plantillaTags.ALTURA_JINETE  , 'g'), jinetes.data.altura_jinete + " cm" )
+        .replace(new RegExp(Hipica.plantillaTags.DATOS_CABALLO  , 'g'), jinetes.data.datos_caballo.nombre_caballo + " Edad: " + jinetes.data.datos_caballo.edad  + " Sexo: "+ jinetes.data.datos_caballo.sexo )
+        .replace(new RegExp(Hipica.plantillaTags.FECHA_NACIMIENTO  , 'g'), jinetes.data.fecha_nacimiento.dia + "/" + jinetes.data.fecha_nacimiento.mes + "/" + jinetes.data.fecha_nacimiento.año)
+        .replace(new RegExp(Hipica.plantillaTags.NOMBRE_CLUB_ACTUAL  , 'g'), jinetes.data.nombre_club_actual )
+        .replace(new RegExp(Hipica.plantillaTags.DIRECCION_CLUB , 'g'), jinetes.data.direccion_club.calle + ", " + jinetes.data.direccion_club.numero + ", " + jinetes.data.direccion_club.localidad + ", " + jinetes.data.direccion_club.provincia + ", " + jinetes.data.direccion_club.pais)
+        .replace(new RegExp(Hipica.plantillaTags.TIPO_COMPETICION , 'g'), jinetes.data.tipo_competicion)
+        .replace(new RegExp(Hipica.plantillaTags.AÑOS_FEDERADO, 'g'), jinetes.data.años_federado)
+        .replace(new RegExp(Hipica.plantillaTags.NUMERO_PARTICIPACIONES, 'g'), jinetes.data.numero_particiapciones_torneo)
+        .replace(new RegExp(Hipica.plantillaTags.NUMERO_TORNEOS_GANADOS, 'g'), jinetes.data.numero_torneos_ganados)
 
 
 }
@@ -310,8 +310,8 @@ Plantilla.sustituyeTags = function (plantilla, jinetes) {
  * @param {jinete} jinete Objeto con los datos de la Jinete que queremos escribir el TR
  * @returns La plantilla des cuerpo de la tabla con los datos actualizados
  */
-Plantilla.plantillaTablaJinetes.actualizaNombres = function (jinetes) {
-    return Plantilla.sustituyeTags(this.cuerpo, jinetes)
+Hipica.plantillaTablaJinetes.actualizaNombres = function (jinetes) {
+    return Hipica.sustituyeTags(this.cuerpo, jinetes)
 }
 
 /**
@@ -320,8 +320,8 @@ Plantilla.plantillaTablaJinetes.actualizaNombres = function (jinetes) {
  * @param {jinete} jinete Objeto con los datos de la Jinete que queremos escribir el TR
  * @returns La plantilla des cuerpo de la tabla con los datos actualizados
  */
-Plantilla.plantillaTablaJinetes.actualiza = function (jinete) {
-    return Plantilla.sustituyeTags(this.cuerpoJinetesTodos, jinete)
+Hipica.plantillaTablaJinetes.actualiza = function (jinete) {
+    return Hipica.sustituyeTags(this.cuerpoJinetesTodos, jinete)
 }
 
 
@@ -331,8 +331,8 @@ Plantilla.plantillaTablaJinetes.actualiza = function (jinete) {
  * @param {Jinete} Jinete Objeto con los datos de la Jinete que queremos escribir en el TR
  * @returns La plantilla del cuerpo de la tabla con los datos actualizados
  */
-Plantilla.plantillaFormularioJinete.actualiza = function (jinete) {
-    return Plantilla.sustituyeTags(this.formulario, jinete);
+Hipica.plantillaFormularioJinete.actualiza = function (jinete) {
+    return Hipica.sustituyeTags(this.formulario, jinete);
 }
 
 
@@ -343,7 +343,7 @@ Plantilla.plantillaFormularioJinete.actualiza = function (jinete) {
  * Función que recupera todos los jinetes llamando al MS Plantilla
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Plantilla.recupera = async function (callBackFn) {
+Hipica.recupera = async function (callBackFn) {
     let response = null
 
     // Intento conectar el microservicio Plantilla
@@ -371,7 +371,7 @@ Plantilla.recupera = async function (callBackFn) {
  * @param {String} idJinete Identificador de la jinete a mostrar
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Plantilla.recuperaUnJinete = async function (idJinete, callBackFn) {
+Hipica.recuperaUnJinete = async function (idJinete, callBackFn) {
     try {
         const url = Frontend.API_GATEWAY + "/plantilla/getPorId/" + idJinete
         const response = await fetch(url);
@@ -390,7 +390,7 @@ Plantilla.recuperaUnJinete = async function (idJinete, callBackFn) {
  * Función que recupera todos los jinetes llamando al MS Plantilla
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Plantilla.recuperaAlfabeticamente = async function (callBackFn) {
+Hipica.recuperaAlfabeticamente = async function (callBackFn) {
     let response = null
     // Intento conectar el microservicio Plantilla
     try {
@@ -427,15 +427,15 @@ Plantilla.recuperaAlfabeticamente = async function (callBackFn) {
  * que se han recuperado de la BBDD
  * @param {vector_de_jinetes} vector
  */
-Plantilla.imprimeNombres = function (vector) {
+Hipica.imprimeNombres = function (vector) {
     //console.log(vector) // Para comprobar lo que hay en vector
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
-    let msj = Plantilla.plantillaTablaJinetes.cabecera
+    let msj = Hipica.plantillaTablaJinetes.cabecera
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualizaNombres(e))
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualizaNombres(e))
     }
-    msj += Plantilla.plantillaTablaJinetes.pie
+    msj += Hipica.plantillaTablaJinetes.pie
 
     // Borrar toda la información de Article y la sustituyo por la que me interesa
     Frontend.Article.actualizar("Listados de nombres de todos los jinetes" , msj)
@@ -447,15 +447,15 @@ Plantilla.imprimeNombres = function (vector) {
  * Función para mostrar en pantalla todos los Jinetes que se han recuperado de la BBDD.
  * @param {Vector_de_jinetes} vector Vector con los datos de los jinetes a mostrar
  */
-Plantilla.imprimeMuchosJinetes = function (vector) {
+Hipica.imprimeMuchosJinetes = function (vector) {
     //console.log(vector) // Para comprobar lo que hay en vector
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));
     }
-    msj += Plantilla.plantillaTablaJinetes.pie
+    msj += Hipica.plantillaTablaJinetes.pie
 
     // Borrar toda la información de Article y la sustituyo por la que me interesa
     Frontend.Article.actualizar("Listados de los datos de todos los jinetes" , msj)
@@ -466,13 +466,13 @@ Plantilla.imprimeMuchosJinetes = function (vector) {
  * Función para mostrar en pantalla los detalles de una jinete que se ha recuperado de la BBDD por su id
  * @param {jinete} jinete Datos de la jinete a mostrar
  */
-Plantilla.imprimeUnJinete = function (jinete) {
+Hipica.imprimeUnJinete = function (jinete) {
     if (!jinete || typeof jinete !== "object") {
         elementoTitulo.innerHTML = "Mostrar datos de un jinete";
     } else{
-        let msj = Plantilla.jineteComoFormulario(jinete);
+        let msj = Hipica.jineteComoFormulario(jinete);
         Frontend.Article.actualizarBoton("Mostrar datos de un jinete", msj)
-        Plantilla.almacenaDatos(jinete)
+        Hipica.almacenaDatos(jinete)
     }
 }
 
@@ -481,8 +481,8 @@ Plantilla.imprimeUnJinete = function (jinete) {
  * Almacena los datos de la jinete que se está mostrando
  * @param {jinete} jinete Datos de la jinete a almacenar
  */
-Plantilla.almacenaDatos = function (jinete) {
-    Plantilla.jieneteSeleccionado = jinete;
+Hipica.almacenaDatos = function (jinete) {
+    Hipica.jieneteSeleccionado = jinete;
 }
 
 /**
@@ -491,7 +491,7 @@ Plantilla.almacenaDatos = function (jinete) {
  * @param {Vector_de_jinetes} vector Vector con los datos de los jinetes a mostrar
  */
 //BUSQUEDA POR APELLIDOS
-Plantilla.imprimePorApellido = function (vector) {
+Hipica.imprimePorApellido = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.nombre_jinete.apellidos < b.data.nombre_jinete.apellidos) {
@@ -503,16 +503,16 @@ Plantilla.imprimePorApellido = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));
     }
-    msj += Plantilla.plantillaTablaJinetes.pie
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por APELLIDOS" , msj)
 }
 
 //BUSQUEDA POR ALTURA
-Plantilla.imprimePorAltura = function (vector) {
+Hipica.imprimePorAltura = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.altura_jinete < b.data.altura_jinete) {
@@ -524,15 +524,15 @@ Plantilla.imprimePorAltura = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por ALTURA" , msj)
 }
 
 //BUSQUEDA POR NOMBRE DEL CABALLO
-Plantilla.imprimePorCaballo = function (vector) {
+Hipica.imprimePorCaballo = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.datos_caballo.nombre_caballo < b.data.datos_caballo.nombre_caballo) {
@@ -544,15 +544,15 @@ Plantilla.imprimePorCaballo = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por NOMBRE DEL CABALLO" , msj)
 }
 
 //BUSQUEDA POR AÑO DE NACIMIENTO
-Plantilla.imprimePorAño = function (vector) {
+Hipica.imprimePorAño = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.fecha_nacimiento.año < b.data.fecha_nacimiento.año  ) {
@@ -564,15 +564,15 @@ Plantilla.imprimePorAño = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por AÑO DE NACIMIENTO" , msj)
 }
 
 //BUSQUEDA POR NOMBRE DEL CLUB
-Plantilla.imprimePorClub = function (vector) {
+Hipica.imprimePorClub = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.nombre_club_actual < b.data.nombre_club_actual) {
@@ -584,15 +584,15 @@ Plantilla.imprimePorClub = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por NOMBRE DEL CLUB" , msj)
 }
 
 //BUSQUEDA POR DIRECCION DEL CLUB
-Plantilla.imprimePorDireccionClub = function (vector) {
+Hipica.imprimePorDireccionClub = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.direccion_club.calle < b.data.direccion_club.calle) {
@@ -604,15 +604,15 @@ Plantilla.imprimePorDireccionClub = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por DIRECCION DEL CLUB" , msj)
 }
 
 //BUSQUEDA POR TIPO DE COMPETICION
-Plantilla.imprimePorCompeticion = function (vector) {
+Hipica.imprimePorCompeticion = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.tipo_competicion < b.data.tipo_competicion) {
@@ -624,15 +624,15 @@ Plantilla.imprimePorCompeticion = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por TIPO COMPETICION" , msj)
 }
 
 //BUSQUEDA POR AÑOS FEDERADO
-Plantilla.imprimePorFederado = function (vector) {
+Hipica.imprimePorFederado = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.años_federado < b.data.años_federado) {
@@ -644,15 +644,15 @@ Plantilla.imprimePorFederado = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por AÑOS FEDERADO" , msj)
 }
 
 //BUSQUEDA POR NUMERO DE PARTICIPACIONES
-Plantilla.imprimePorParticipaciones = function (vector) {
+Hipica.imprimePorParticipaciones = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.numero_particiapciones_torneo < b.data.numero_particiapciones_torneo) {
@@ -664,15 +664,15 @@ Plantilla.imprimePorParticipaciones = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por PARTICIPACIONES" , msj)
 }
 
 //BUSQUEDA POR NUMERO DE TORNEOS GANADOS
-Plantilla.imprimePorGanado = function (vector) {
+Hipica.imprimePorGanado = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.numero_torneos_ganados < b.data.numero_torneos_ganados) {
@@ -684,10 +684,10 @@ Plantilla.imprimePorGanado = function (vector) {
             return 0;
         });
     }
-    let msj = Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos
+    let msj = Hipica.plantillaTablaJinetes.cabeceraJinetesTodos
     if (vector && Array.isArray(vector)) {
-        vector.forEach(e => msj += Plantilla.plantillaTablaJinetes.actualiza(e));}
-    msj += Plantilla.plantillaTablaJinetes.pie
+        vector.forEach(e => msj += Hipica.plantillaTablaJinetes.actualiza(e));}
+    msj += Hipica.plantillaTablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por TORNEOS GANADOS" , msj)
 }
 
@@ -696,14 +696,14 @@ Plantilla.imprimePorGanado = function (vector) {
 /**
  * Función principal para responder al evento de elegir la opción "Home"
  */
-Plantilla.procesarHome = function () {
+Hipica.procesarHome = function () {
     this.descargarRuta("/plantilla/", this.mostrarHome);
 }
 
 /**
  * Función principal para responder al evento de elegir la opción "Acerca de"
  */
-Plantilla.procesarAcercaDe = function () {
+Hipica.procesarAcercaDe = function () {
     this.descargarRuta("/plantilla/acercade", this.mostrarAcercaDe);
 }
 
@@ -713,8 +713,8 @@ Plantilla.procesarAcercaDe = function () {
  * FUNCIÓN PARA LA HISTORIA DE USUARIO 2
  * Función principal para recuperar las jinetes desde el MS, y posteriormente imprimirlas
  */
-Plantilla.nombrarJinetes = function () {
-    Plantilla.recupera(Plantilla.imprimeNombres);
+Hipica.nombrarJinetes = function () {
+    Hipica.recupera(Hipica.imprimeNombres);
 }
 
 
@@ -723,8 +723,8 @@ Plantilla.nombrarJinetes = function () {
  * Función principal para recuperar los Jinetes del MS y, posteriormente, imprimirlos.
  */
 
-Plantilla.listarJinetes = function () {
-    Plantilla.recupera(Plantilla.imprimeMuchosJinetes);
+Hipica.listarJinetes = function () {
+    Hipica.recupera(Hipica.imprimeMuchosJinetes);
 }
 
 /**
@@ -732,7 +732,7 @@ Plantilla.listarJinetes = function () {
  * Función principal para mostrar los datos de una jinete desde el MS y, posteriormente, imprimirla.
  * @param {String} idJinete Identificador de la jinete a mostrar
  */
-Plantilla.mostrar = function (idJinete) {
+Hipica.mostrar = function (idJinete) {
     this.recuperaUnJinete(idJinete, this.imprimeUnJinete);
 }
 
@@ -740,8 +740,8 @@ Plantilla.mostrar = function (idJinete) {
  * FUNCIÓN PARA LA HISTORIA DE USUARIO 3
  * Función principal para recuperar los Jinetes del MS y, posteriormente, imprimirlos.
  */
-Plantilla.listarJinetesAlafetico = function () {
-    Plantilla.recuperaAlfabeticamente(Plantilla.imprimeNombres);
+Hipica.listarJinetesAlafetico = function () {
+    Hipica.recuperaAlfabeticamente(Hipica.imprimeNombres);
 }
 
 /**
@@ -749,54 +749,54 @@ Plantilla.listarJinetesAlafetico = function () {
  * Función principal para recuperar los Jinetes del MS y, posteriormente, imprimirlos.
  */
 //ORDENADO POR APELLIDOS
-Plantilla.listarPorApellido = function () {
-    Plantilla.recupera(Plantilla.imprimePorApellido);
+Hipica.listarPorApellido = function () {
+    Hipica.recupera(Hipica.imprimePorApellido);
 }
 
 //ORDENADO POR ALTURA DEL JINETE
-Plantilla.listarPorAltura = function () {
-    Plantilla.recupera(Plantilla.imprimePorAltura);
+Hipica.listarPorAltura = function () {
+    Hipica.recupera(Hipica.imprimePorAltura);
 }
 
 
 //ORDENADO POR ORDEN ALFABETICO NOMBRE DEL CABALLO
-Plantilla.listarPorCaballo = function () {
-    Plantilla.recupera(Plantilla.imprimePorCaballo);
+Hipica.listarPorCaballo = function () {
+    Hipica.recupera(Hipica.imprimePorCaballo);
 }
 
 //ORDENADO POR AÑO DE NACIMIENTO
-Plantilla.listarPorAño = function () {
-    Plantilla.recupera(Plantilla.imprimePorAño);
+Hipica.listarPorAño = function () {
+    Hipica.recupera(Hipica.imprimePorAño);
 }
 
 //ORDENADO POR ORDEN ALFABETICO DEL NOMBRE DEL CLUB
-Plantilla.listarPorClub = function () {
-    Plantilla.recupera(Plantilla.imprimePorClub);
+Hipica.listarPorClub = function () {
+    Hipica.recupera(Hipica.imprimePorClub);
 }
 
 //ORDENADO POR ORDEN ALFABETICO DE LA DIRECCION DEL CLUB
-Plantilla.listarPorDireccionClub = function () {
-    Plantilla.recupera(Plantilla.imprimePorDireccionClub);
+Hipica.listarPorDireccionClub = function () {
+    Hipica.recupera(Hipica.imprimePorDireccionClub);
 }
 
 //ORDENADO POR ORDEN ALFABETICO DEL TIPO DE COMPETICION
-Plantilla.listarPorCompeticion = function () {
-    Plantilla.recupera(Plantilla.imprimePorCompeticion);
+Hipica.listarPorCompeticion = function () {
+    Hipica.recupera(Hipica.imprimePorCompeticion);
 }
 
 //ORDENADO POR ORDEN ALFABETICO DEL TIPO DE COMPETICION
-Plantilla.listarPorAniosFederado = function () {
-    Plantilla.recupera(Plantilla.imprimePorFederado);
+Hipica.listarPorAniosFederado = function () {
+    Hipica.recupera(Hipica.imprimePorFederado);
 }
 
 //ORDENADO POR NUMERO DE TORNEOS PARTICIPADOS
-Plantilla.listarPorParticipaciones = function () {
-    Plantilla.recupera(Plantilla.imprimePorParticipaciones);
+Hipica.listarPorParticipaciones = function () {
+    Hipica.recupera(Hipica.imprimePorParticipaciones);
 }
 
 //ORDENADO POR NUMERO DE TORNEOS GANADOS
-Plantilla.listarPorGanados = function () {
-    Plantilla.recupera(Plantilla.imprimePorGanado);
+Hipica.listarPorGanados = function () {
+    Hipica.recupera(Hipica.imprimePorGanado);
 }
 
 
@@ -810,7 +810,7 @@ Plantilla.listarPorGanados = function () {
  * Oculta todas las opciones secundarias
  * @returns El propio objeto para encadenar llamadas
  */
-Plantilla.ocultarOpcionesSecundarias = function () {
+Hipica.ocultarOpcionesSecundarias = function () {
     this.opcionesMostrarOcultar("opcion-secundaria", false)
     return this
 }
@@ -819,7 +819,7 @@ Plantilla.ocultarOpcionesSecundarias = function () {
  * Muestra todas las opciones secundarias
  * @returns El propio objeto para encadenar llamadas
  */
-Plantilla.mostrarOpcionesSecundarias = function () {
+Hipica.mostrarOpcionesSecundarias = function () {
     this.opcionesMostrarOcultar("opcion-secundaria", true)
     return this
 }
@@ -829,7 +829,7 @@ Plantilla.mostrarOpcionesSecundarias = function () {
  * Muestra las opciones que tiene el usuario cuando selecciona Editar
  * @returns El propio objeto Jinetes, para concatenar llamadas
  */
-Plantilla.mostrarOcionesTerciariasEditar = function () {
+Hipica.mostrarOcionesTerciariasEditar = function () {
     this.opcionesMostrarOcultar("opcion-terciaria editar", true)
     return this
 }
@@ -839,7 +839,7 @@ Plantilla.mostrarOcionesTerciariasEditar = function () {
  * Oculta las opciones que tiene el usuario cuando selecciona Editar
  * @returns El propio objeto Jinetes, para concatenar llamadas
  */
-Plantilla.ocultarOcionesTerciariasEditar = function () {
+Hipica.ocultarOcionesTerciariasEditar = function () {
     this.opcionesMostrarOcultar("opcion-terciaria editar", false)
     return this
 }
@@ -849,7 +849,7 @@ Plantilla.ocultarOcionesTerciariasEditar = function () {
 /**
  * Función que permite modificar los datos de una Jinete
  */
-Plantilla.editar = function () {
+Hipica.editar = function () {
     this.ocultarOpcionesSecundarias()
     this.mostrarOcionesTerciariasEditar()
     this.habilitarCamposEditables()
@@ -859,8 +859,8 @@ Plantilla.editar = function () {
  * Establece disable = true en los campos editables
  * @returns El propio objeto Jinetes, para concatenar llamadas
  */
-Plantilla.deshabilitarCamposEditables = function () {
-    Plantilla.habilitarDeshabilitarCamposEditables(true)
+Hipica.deshabilitarCamposEditables = function () {
+    Hipica.habilitarDeshabilitarCamposEditables(true)
     return this
 }
 
@@ -869,8 +869,8 @@ Plantilla.deshabilitarCamposEditables = function () {
  * Establece disable = false en los campos editables
  * @returns El propio objeto Jinetes, para concatenar llamadas
  */
-Plantilla.habilitarCamposEditables = function () {
-    Plantilla.habilitarDeshabilitarCamposEditables(false)
+Hipica.habilitarCamposEditables = function () {
+    Hipica.habilitarDeshabilitarCamposEditables(false)
     return this
 }
 
@@ -881,7 +881,7 @@ Plantilla.habilitarCamposEditables = function () {
  * ????Muestra las opciones que tiene el usuario cuando selecciona Editar
  * @returns El propio objeto Jinetes, para concatenar llamadas
  */
-Plantilla.opcionesMostrarOcultar = function (classname, mostrando) {
+Hipica.opcionesMostrarOcultar = function (classname, mostrando) {
     let opciones = document.getElementsByClassName(classname)
     let claseQuitar = mostrando ? Frontend.CLASS_OCULTAR : Frontend.CLASS_MOSTRAR
     let claseAniadir = !mostrando ? Frontend.CLASS_OCULTAR : Frontend.CLASS_MOSTRAR
@@ -898,10 +898,10 @@ Plantilla.opcionesMostrarOcultar = function (classname, mostrando) {
  * @param {boolean} Deshabilitando Indica si queremos deshabilitar o habilitar los campos
  * @returns El propio objeto Jinetes, para concatenar llamadas
  */
-Plantilla.habilitarDeshabilitarCamposEditables = function (deshabilitando) {
+Hipica.habilitarDeshabilitarCamposEditables = function (deshabilitando) {
     deshabilitando = (typeof deshabilitando === "undefined" || deshabilitando === null) ? true : deshabilitando
-    for (let campo in Plantilla.form) {
-        document.getElementById(Plantilla.form[campo]).disabled = deshabilitando
+    for (let campo in Hipica.form) {
+        document.getElementById(Hipica.form[campo]).disabled = deshabilitando
     }
     return this
 }

@@ -52,86 +52,86 @@ function esperar(ms) {
 
 // SPECS a probar
 
-describe("Plantilla.mostrarHome: ", function () {
+describe("Hipica.mostrarHome: ", function () {
 
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
-            Plantilla.mostrarHome()
+            Hipica.mostrarHome()
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+            expect(elementoContenido.innerHTML).toBe(Hipica.datosDescargadosNulos.mensaje)
         })
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
-            Plantilla.mostrarHome(23)
+            Hipica.mostrarHome(23)
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+            expect(elementoContenido.innerHTML).toBe(Hipica.datosDescargadosNulos.mensaje)
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje",
         function () {
             // Objeto vacío
-            Plantilla.mostrarHome({})
+            Hipica.mostrarHome({})
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+            expect(elementoContenido.innerHTML).toBe(Hipica.datosDescargadosNulos.mensaje)
 
             // Objeto sin campo mensaje
-            Plantilla.mostrarHome({ foo: "bar" })
+            Hipica.mostrarHome({ foo: "bar" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+            expect(elementoContenido.innerHTML).toBe(Hipica.datosDescargadosNulos.mensaje)
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
-            Plantilla.mostrarHome(datosDescargadosPrueba)
+            Hipica.mostrarHome(datosDescargadosPrueba)
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
             expect(elementoContenido.innerHTML).toBe(datosDescargadosPrueba.mensaje)
         })
 })
 
 
-describe("Plantilla.mostrarAcercaDe: ", function () {
+describe("Hipica.mostrarAcercaDe: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
-            Plantilla.mostrarAcercaDe()
+            Hipica.mostrarAcercaDe()
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
         })
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
-            Plantilla.mostrarAcercaDe(23)
+            Hipica.mostrarAcercaDe(23)
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje o autor o email o fecha ",
         function () {
             // Objeto vacío
-            Plantilla.mostrarAcercaDe({})
+            Hipica.mostrarAcercaDe({})
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
             // Objeto sin campo mensaje
-            Plantilla.mostrarAcercaDe({ autor: "un autor", email: "un email", fecha: "una fecha" })
+            Hipica.mostrarAcercaDe({ autor: "un autor", email: "un email", fecha: "una fecha" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
             // Objeto sin campo autor
-            Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", email: "un email", fecha: "una fecha" })
+            Hipica.mostrarAcercaDe({ mensaje: "un mensaje", email: "un email", fecha: "una fecha" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
             // Objeto sin campo email
-            Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
+            Hipica.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
             // Objeto sin campo fecha
-            Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
+            Hipica.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoContenido.innerHTML.search(Hipica.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
         })
     it("muestra correctamente el título y el mensaje conteniendo el autor, el email y la fecha",
         function () {
-            Plantilla.mostrarAcercaDe(datosDescargadosPrueba)
+            Hipica.mostrarAcercaDe(datosDescargadosPrueba)
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
 
             // Comprobamos que al buscar el autor, el email y la fecha de prueba los encuentra dentro del contenido del article
@@ -149,9 +149,9 @@ IMPORTANTE
 Las pruebas TDD que se encargan de probar las conexiones con el microservicio desde el cliente son difíciles de probar 
 dado que requieren solucionar temas de sincronización. 
 Esto afecta a los métodos:
- - Plantilla.descargarRuta
- - Plantilla.procesarAcercaDe
- - Plantilla.procesarHome
+ - Hipica.descargarRuta
+ - Hipica.procesarAcercaDe
+ - Hipica.procesarHome
 
  Las soluciones propuestas en distintos sitios web no han producido el resultado esperado, 
  por tanto: para esta práctica, se pueden dejar SIN HACER.
@@ -160,16 +160,16 @@ Esto afecta a los métodos:
 
 
 //TDD PARA HU 2
-describe("Plantilla.imprimeNombres: ", function() {
+describe("Hipica.imprimeNombres: ", function() {
     it("muestra datos nulos cuando le pasamos un valor nulo", function() {
-        Plantilla.imprimeNombres([])
+        Hipica.imprimeNombres([])
         expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_NOMBRES_JINETES)
        expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_NULO)
     })
 
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimeNombres(12)
+        Hipica.imprimeNombres(12)
        expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_NOMBRES_JINETES)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_NULO)
         })
@@ -177,154 +177,154 @@ describe("Plantilla.imprimeNombres: ", function() {
 
 //TDD PARA HU 4
 
-describe("Plantilla.imprimeMuchosJinetes: ", function() {
+describe("Hipica.imprimeMuchosJinetes: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimeMuchosJinetes([])
+        Hipica.imprimeMuchosJinetes([])
         expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_DATOS_JINETES)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimeMuchosJinetes(12)
+        Hipica.imprimeMuchosJinetes(12)
         expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_DATOS_JINETES)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
 //TDD PARA HU 6
-describe("Plantilla.imprimeUnJinete: " , function() {
+describe("Hipica.imprimeUnJinete: " , function() {
     it("Mostrar datos nulos cuando le pasamos un valor nulo", function() {
             let jinete = null;
-            Plantilla.imprimeUnJinete(jinete);
+            Hipica.imprimeUnJinete(jinete);
             expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_DATOS_UN_JINETE);
         })
 })
 
 //TDD PARA HU 5
-describe("Plantilla.imprimePorApellido: ", function() {
+describe("Hipica.imprimePorApellido: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorApellido([])
+        Hipica.imprimePorApellido([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_APELLIDOS)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorApellido(12)
+        Hipica.imprimePorApellido(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_APELLIDOS)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorAltura: ", function() {
+describe("Hipica.imprimePorAltura: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorAltura([])
+        Hipica.imprimePorAltura([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_ALTURA)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorAltura(12)
+        Hipica.imprimePorAltura(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_ALTURA)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorCaballo: ", function() {
+describe("Hipica.imprimePorCaballo: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorCaballo([])
+        Hipica.imprimePorCaballo([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_CABALLO)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorCaballo(12)
+        Hipica.imprimePorCaballo(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_CABALLO)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorAño: ", function() {
+describe("Hipica.imprimePorAño: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorAño([])
+        Hipica.imprimePorAño([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_NACIMIENTO)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorAño(12)
+        Hipica.imprimePorAño(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_NACIMIENTO)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorClub: ", function() {
+describe("Hipica.imprimePorClub: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorClub([])
+        Hipica.imprimePorClub([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_CLUB)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorClub(12)
+        Hipica.imprimePorClub(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_CLUB)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorDireccionClub: ", function() {
+describe("Hipica.imprimePorDireccionClub: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorDireccionClub([])
+        Hipica.imprimePorDireccionClub([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_DIRECCION_CLUB)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorDireccionClub(12)
+        Hipica.imprimePorDireccionClub(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_DIRECCION_CLUB)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorCompeticion: ", function() {
+describe("Hipica.imprimePorCompeticion: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorCompeticion([])
+        Hipica.imprimePorCompeticion([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_COMPETICION)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorCompeticion(12)
+        Hipica.imprimePorCompeticion(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_COMPETICION)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorFederado: ", function() {
+describe("Hipica.imprimePorFederado: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorFederado([])
+        Hipica.imprimePorFederado([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_FEDERADO)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorFederado(12)
+        Hipica.imprimePorFederado(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_FEDERADO)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorParticipaciones: ", function() {
+describe("Hipica.imprimePorParticipaciones: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorParticipaciones([])
+        Hipica.imprimePorParticipaciones([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_PARTICIPACIONES)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorParticipaciones(12)
+        Hipica.imprimePorParticipaciones(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_PARTICIPACIONES)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
 
-describe("Plantilla.imprimePorGanado: ", function() {
+describe("Hipica.imprimePorGanado: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
-        Plantilla.imprimePorGanado([])
+        Hipica.imprimePorGanado([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_TORNEOS_GANADOS)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
-        Plantilla.imprimePorGanado(12)
+        Hipica.imprimePorGanado(12)
         expect(elementoTitulo.innerHTML).toBe(JINETE_TORNEOS_GANADOS)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
@@ -332,27 +332,27 @@ describe("Plantilla.imprimePorGanado: ", function() {
 
 
 //EXPECTS PARA LAS TABLAS
-describe("Plantilla.plantillaTablaJinetes.pie ", function () {
+describe("Hipica.plantillaTablaJinetes.pie ", function () {
     it("debería devolver las etiquetas HTML para el pie de tabla cuando se le pasa un valor nulo", function() {
-        expect(Plantilla.plantillaTablaJinetes.pie).not.toBe(null);
+        expect(Hipica.plantillaTablaJinetes.pie).not.toBe(null);
     });
     it("debería devolver las etiquetas HTML para el pie de tabla cuando se le pasa un valor vacío", function() {
-        expect(Plantilla.plantillaTablaJinetes.pie).not.toBe("");
+        expect(Hipica.plantillaTablaJinetes.pie).not.toBe("");
     });
     it("debería devolver las etiquetas HTML para el pie de tabla",
         function () {
-            expect(Plantilla.plantillaTablaJinetes.pie).toBe("</tbody> </table>");
+            expect(Hipica.plantillaTablaJinetes.pie).toBe("</tbody> </table>");
         });
 });
 
-describe("Plantilla.plantillaTablaJinetes.cabecera", function() {
+describe("Hipica.plantillaTablaJinetes.cabecera", function() {
     it('existe la función cabecera', () => {
-        expect(Plantilla.plantillaTablaJinetes.cabecera).toBeDefined();
+        expect(Hipica.plantillaTablaJinetes.cabecera).toBeDefined();
     });
 });
 
-describe("Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos", function() {
+describe("Hipica.plantillaTablaJinetes.cabeceraJinetesTodos", function() {
     it('existe la función cabeceraJinetesTodos', () => {
-        expect(Plantilla.plantillaTablaJinetes.cabeceraJinetesTodos).toBeDefined();
+        expect(Hipica.plantillaTablaJinetes.cabeceraJinetesTodos).toBeDefined();
     });
 });
