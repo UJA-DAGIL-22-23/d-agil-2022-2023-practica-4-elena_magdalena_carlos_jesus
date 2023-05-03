@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aplicación Microservicios Plantilla</title>
+
+    <!-- Cargamos biblioteca Jasmine -->
+
+    <link rel="stylesheet" href="lib/jasmine-4.5.0/jasmine.css">
+    <script src="lib/jasmine-4.5.0/jasmine.js"></script>
+    <script src="lib/jasmine-4.5.0/jasmine-html.js"></script>
+    <script src="lib/jasmine-4.5.0/boot0.js"></script>
+    <script src="lib/jasmine-4.5.0/boot1.js"></script>
+
+
+    <!-- Cargamos nuestros CSS -->
+    <link rel="stylesheet" href="css/front-end.css">
+
+
+</head>
+
+<body>
+<h1>Aplicación Microservicios Plantilla</h1>
+<!-- Barra de navegación de la aplicación -->
+<nav>
+    <a href="javascript:Plantilla.procesarHome()" class="opcion-principal"
+       title="Llama a la ruta / del MS Plantilla">Home</a>
+
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 1 -->
+    <a href="javascript:Plantilla.procesarAcercaDe()" class="opcion-principal"
+       title="Llama a la ruta /acercade del MS Plantilla">Acerca de </a>
+
+      <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 2 -->
+    <a href="javascript:Plantilla.nombrarJinetes()" class="opcion-principal"
+       title="Realizar un listado de todos los nombres de los jinetes que hay en la BBDD">Nombrar a los jinetes</a>
+
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 4 -->
+    <a href="javascript:Plantilla.listarJinetes()" class="opcion-principal"
+       title="Realizar un listado de los datos de todos los jinetes que hay en la BBDD">Listar jinetes</a>
+
+    <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 6 -
+    <a href="javascript:Plantilla.mostrar('362460511033360588')" class="opcion-principal mostrar"
+       title="Muestra los datos de un determinado Jinete ">Mostrar un jinete</a>
+-->
+    <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 3 -->
+    <a href="javascript:Plantilla.listarJinetesAlafetico()" class="opcion-principal"
+       title="Realizar un listado en orden alfabetico de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes en orden Alfabetico</a>
+
+    <!-- FUNCIONES PARA LA HISTORIA DE USUARIO 5 -->
+    <a href="javascript:Plantilla.listarPorApellido()" class="opcion-principal"
+       title="Realizar un listado en orden alfabetico de los apellidos de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Apellidos</a>
+
+    <a href="javascript:Plantilla.listarPorAltura()" class="opcion-principal"
+       title="Realizar un listado en orden de altura de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Altura</a>
+
+    <h1>    </h1>
+
+    <a href="javascript:Plantilla.listarPorCaballo()" class="opcion-principal"
+       title="Realizar un listado en orden alfabetico del nombre del caballo de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Caballo</a>
+
+    <a href="javascript:Plantilla.listarPorAño()" class="opcion-principal"
+       title="Realizar un listado por el año de nacimiento de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Año de nacimiento</a>
+
+    <a href="javascript:Plantilla.listarPorClub()" class="opcion-principal"
+       title="Realizar un listado en orden alfabetico del nombre del club de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Club</a>
+
+    <a href="javascript:Plantilla.listarPorDireccionClub()" class="opcion-principal"
+       title="Realizar un listado en orden alfabetico de la direccion del club de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Direccion Club</a>
+
+    <a href="javascript:Plantilla.listarPorCompeticion()" class="opcion-principal"
+       title="Realizar un listado en orden alfabetico del tipo de competición de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Tipo Competición</a>
+
+    <h1>    </h1>
+
+    <a href="javascript:Plantilla.listarPorAniosFederado()" class="opcion-principal"
+       title="Realizar un listado segun los años federados de los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por años federado</a>
+
+    <a href="javascript:Plantilla.listarPorParticipaciones()" class="opcion-principal"
+       title="Realizar un listado segun el numero de participaciones los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por participaciones</a>
+
+    <a href="javascript:Plantilla.listarPorGanados()" class="opcion-principal"
+       title="Realizar un listado segun el numero de torneos ganados los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por ganados</a>
+
+
+
+</nav>
+
+
+
+<!--
+    Article en el que se va a mostrar la info cuando se pinche una opción del menú
+    Todos los apartados de este article se rellenarán con funciones en Javascript
+-->
+<article id="seccion-principal">
+    <!-- Título del article -->
+    <h2 id="seccion-principal-titulo"></h2>
+    <!-- Contenido del article -->
+    <div id="seccion-principal-contenido">
+        <div id="tabla_formulario_persona" class="ocultar"></div>
+    </div>
+</article>
+
+
+<!--
+    ...............  ZONA DE CARGA DE FICHEROS JS .........................
+
+    Debe ponerse al final del documento para que estén creados los elementos del DOM.
+
+-->
+
+<!-- Cargamos ficheros JS propios del proyecto -->
+<script src="js/front-end.js"></script>
+<script src="js/ms-plantilla.js"></script>
+
+
+<!-- Cargamos ficheros spec con los tests -->
+
+<script src="js/front-end-spec.js"></script>
+<script src="js/ms-plantilla-spec.js"></script>
+
+
+</body>
+
+</html>
