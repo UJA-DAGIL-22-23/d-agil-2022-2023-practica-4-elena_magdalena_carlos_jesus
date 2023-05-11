@@ -164,9 +164,9 @@ Hipica.formularioJinete.formulario = `
     <tbody>
         <tr title="${Hipica.hipicaTags.ID}">
             <td><input type="text" class="form-persona-elemento disabled" disabled id="form-persona-id" required value="${Hipica.hipicaTags.ID}" name="id_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-nombre"  value="${Hipica.hipicaTags.NOMBRE}" name="nombre_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-apellidos"  value="${Hipica.hipicaTags.APELLIDOS}" name="apellidos_jinete"/></td>
-            <td><input type="text" class="form-persona-elemento editable"  id="form-persona-altura_jinete"  value="${Hipica.hipicaTags.ALTURA_JINETE}" name="altura_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-nombre" required value="${Hipica.hipicaTags.NOMBRE}" name="nombre_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-apellidos" required value="${Hipica.hipicaTags.APELLIDOS}" name="apellidos_jinete"/></td>
+            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-altura_jinete" required value="${Hipica.hipicaTags.ALTURA_JINETE}" name="altura_jinete"/></td>
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-datos_caballo" required value="${Hipica.hipicaTags.DATOS_CABALLO}" name="datos_caballo"/></td>
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-fecha_nacimiento" required value="${Hipica.hipicaTags.FECHA_NACIMIENTO}" name="fecha_nacimiento"/></td>
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-nombre_club_actual" required value="${Hipica.hipicaTags.NOMBRE_CLUB_ACTUAL}" name="nombre_club_actual"/></td>
