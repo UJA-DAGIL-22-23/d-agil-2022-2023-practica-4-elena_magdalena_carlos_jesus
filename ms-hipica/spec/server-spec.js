@@ -25,7 +25,7 @@ describe('Servidor PLANTILLA:', () => {
         .expect(function (res) {
           //console.log( res.body ); // Para comprobar qué contiene exactamente res.body
           assert(res.body.hasOwnProperty('mensaje'));
-          assert(res.body.mensaje === "Microservicio MS Plantilla: home");
+          assert(res.body.mensaje === "Microservicio MS PlantillaHipica: home");
 
         })
         .end((error) => { error ? done.fail(error) : done() })

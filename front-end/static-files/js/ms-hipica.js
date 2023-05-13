@@ -74,7 +74,6 @@ Hipica.descargarRuta = async function (ruta, callBackFn) {
     }
 }
 
-
 /**
  * Función principal para mostrar los datos enviados por la ruta "home" de MS hipica
  */
@@ -714,7 +713,7 @@ Hipica.procesarAcercaDe = function () {
  * Función principal para recuperar las jinetes desde el MS, y posteriormente imprimirlas
  */
 Hipica.nombrarJinetes = function () {
-    Hipica.recupera(Hipica.imprimeNombres);
+        Hipica.recupera(Hipica.imprimeNombres);
 }
 
 
