@@ -39,6 +39,37 @@ describe('API Gateway: rutas estáticas', () => {
         })
         .end((error) => { error ? done.fail(error) : done() })
     });
+      it('Devuelve MS Plantilla Home Page', (done) => {
+          supertest(app)
+              .get('/hipica/')
+              .expect(200)
+              .expect('Content-Type', /json/)
+              .expect(function (res) {
+                  //console.log( res.body ); // Para comprobar qué contiene exactamente res.body
+                  assert(res.body.hasOwnProperty('mensaje'));
+                  assert(res.body.mensaje === "Microservicio MS Plantilla: home");
+
+              })
+              .end((error) => { error ? done.fail(error) : done() })
+      });
+      it('Devuelve MS Plantilla Acerca De', (done) => {
+          supertest(app)
+              .get('/hipica/acercade')
+              .expect(200)
+              .expect('Content-Type', /json/)
+              .expect(function (res) {
+                  //console.log( "BODY ACERCA DE ", res.body ); // Para comprobar qué contiene exactamente res.body
+                  assert(res.body.hasOwnProperty('mensaje'));
+                  assert(res.body.mensaje === "Microservicio MS Plantilla: acerca de");
+                  assert(res.body.autor === "Elena Gómez Padilla");
+                  assert(res.body.email === "egp00044@red.ujaen.es");
+                  assert(res.body.fecha === "26/11/2001");
+
+              })
+              .end((error) => { error ? done.fail(error) : done() })
+      });
+
+
   })
 });
 

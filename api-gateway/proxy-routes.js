@@ -20,7 +20,7 @@ const ROUTES = [
     {
         url: '/hipica',
         proxy: {
-            target: "http://localhost:8002",
+            target: "http://localhost:8003",
             changeOrigin: true,
             pathRewrite: {
                 [`^/hipica`]: '',
