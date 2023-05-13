@@ -501,35 +501,35 @@ Golf.habilitarDeshabilitarCamposEditables = function (deshabilitando) {
  * Función principal para responder al evento de elegir la opción "Home"
  */
 Golf.procesarHome = function () {
-    this.descargarRuta("/plantilla/", this.mostrarHome);
+    this.descargarRuta("/golf/", this.mostrarHome);
 }
 
 /**
  * Función principal para responder al evento de elegir la opción "Acerca de"
  */
 Golf.procesarAcercaDe = function () {
-    this.descargarRuta("/plantilla/acercade", this.mostrarAcercaDe);
+    this.descargarRuta("/golf/acercade", this.mostrarAcercaDe);
 }
 
 /**
  * Función principal para responder al evento de elegir la opción "Nombres jugadores"
  */
 Golf.procesarNombres = function () {
-    this.descargarRuta("/plantilla/getNombres", this.mostrarNombres);
+    this.descargarRuta("/golf/getNombres", this.mostrarNombres);
 }
 
 /**
  * Función principal para responder al evento de elegir la opción "Nombres jugadores" y mostrarlos de forma ordenada
  */
 Golf.procesarNombresOrdenados = function () {
-    this.descargarRuta("/plantilla/getNombres", this.mostrarNombresOrdenados);
+    this.descargarRuta("/golf/getNombres", this.mostrarNombresOrdenados);
 }
 
 /**
  * Función principal para responder al evento de elegir la opción "Listar jugadores" y mostrarlos de forma ordenada
  */
 Golf.procesarJugadores = function (opcion) {
-    this.descargarRuta("/plantilla/getTodos", this.imprimeMuchosJugadores, opcion);
+    this.descargarRuta("/golf/getTodos", this.imprimeMuchosJugadores, opcion);
 }
 
 /**
@@ -537,7 +537,7 @@ Golf.procesarJugadores = function (opcion) {
  * @param {String} idJugador Identificador de la persona a mostrar
  */
 Golf.mostrar = function (idJugador) {
-    this.descargarRuta("/plantilla/getPorId/"+idJugador, this.imprimeUnJugador);
+    this.descargarRuta("/golf/getPorId/"+idJugador, this.imprimeUnJugador);
 }
 
 /**
@@ -554,7 +554,7 @@ Golf.editar = function () {
  */
 Golf.guardar = async function () {
     try {
-        let url = Frontend.API_GATEWAY + "/plantilla/setNombre/"
+        let url = Frontend.API_GATEWAY + "/golf/setNombre/"
         let id_jugador = document.getElementById("form-persona-id").value
         const response = await fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -598,7 +598,7 @@ Golf.aniadeJugador = function () {
  */
 Golf.aniadirJugador = async function () {
     try {
-        let url = Frontend.API_GATEWAY + "/plantilla/nuevoJugador/"
+        let url = Frontend.API_GATEWAY + "/golf/nuevoJugador/"
         const response = await fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, cors, *same-origin
@@ -636,7 +636,7 @@ Golf.aniadirJugador = async function () {
  */
 Golf.eliminar = async function () {
     try {
-        let url = Frontend.API_GATEWAY + "/plantilla/eliminaJugador/"
+        let url = Frontend.API_GATEWAY + "/golf/eliminaJugador/"
         let id_jugador = document.getElementById("form-persona-id").value
         const response = await fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
