@@ -16,6 +16,16 @@ const ROUTES = [
                 [`^/plantillaCurling`]: '',
             },
         }
+    },
+    {
+        url: '/hipica',
+        proxy: {
+            target: "http://localhost:8002",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/hipica`]: '',
+            },
+        }
     }
 ]
 
