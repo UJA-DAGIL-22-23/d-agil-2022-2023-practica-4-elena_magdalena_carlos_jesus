@@ -5,9 +5,12 @@
  * @date 03-Feb-2023
  */
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
  table.listado-personas {
     width: 100%;
     border: 1px solid rgba(0, 0, 100, 0.8);
@@ -58,4 +61,37 @@ table.listado-personas td {
 
 table.listado-personas {
     width: 100%;
+<<<<<<< HEAD
 
+=======
+}
+
+table.Estilo_Nombres{
+    width: 100%;
+    border: 1px solid rgba(106,90,205,0.8);
+    text-align: center;
+    font-size: 16px;
+    background-color: #CCCCFF
+}
+
+table.Estilo_Nombres thead th{
+   text-align:center;
+   font-size: 25px;
+   background-color: #9999FF
+}
+
+table.Estilo_Completo{
+   width: 100%;
+   border: 1px solid rgba(106,90,205,0.8);
+   text-align: center;
+   font-size: 16px;
+   background-color: #CCCCFF;
+}
+
+table.Estilo_Completo thead th{
+   text-align:center;
+   font-size: 20px;
+   background-color: #9999FF;
+   height: 2em;
+}
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0

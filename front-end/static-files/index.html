@@ -2,6 +2,7 @@
 <html>
 
 <head>
+<<<<<<< HEAD
 
     <title>Aplicación Microservicios Plantilla</title>
 
@@ -10,6 +11,9 @@
         
 
     <title>Aplicación Microservicios Golf</title>
+=======
+    <title>Aplicación Microservicios</title>
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 
     <!-- Cargamos biblioteca Jasmine -->
 
@@ -19,8 +23,11 @@
     <script src="lib/jasmine-4.5.0/boot0.js"></script>
     <script src="lib/jasmine-4.5.0/boot1.js"></script>
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
     <!-- Cargamos nuestros CSS -->
     <link rel="stylesheet" href="css/front-end.css">
 
@@ -28,6 +35,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <h1>Aplicación Microservicios Plantilla</h1>
     <!-- Barra de navegación de la aplicación -->
@@ -80,6 +88,13 @@
     <h1>Aplicación Microservicios Golf</h1>
     <!-- Barra de navegación de la aplicación -->
     <nav>
+=======
+    <h1>Aplicación Microservicios</h1>
+    <!-- Barra de navegación de la aplicación -->
+    <nav>
+        <!-- FUNCIONES DEL MICROSERVICIO DE GOLF -->
+        <h2>MS Golf: </h2>
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         <a href="javascript:Golf.procesarHome()" class="opcion-principal"
             title="Llama a la ruta / del MS Golf">Home</a>
         <a href="javascript:Golf.procesarAcercaDe()" class="opcion-principal"
@@ -90,7 +105,96 @@
             title="Llama a la ruta /getTodos del MS Golf">Listar Jugadores</a>
         <a href="javascript:Golf.aniadeJugador()" class="opcion-principal mostrar"
             title="Llama a la ruta /getTodos del MS Golf">Añadir jugador</a>
+<<<<<<< HEAD
 
+=======
+    </nav>
+    <nav>
+        <!-- FUNCIONES DEL MICROSERVICIO DE CURLING -->
+        <h2>MS Curling: </h2>
+        <a href="javascript:PlantillaCurling.procesarHome()" class="opcion-principal"
+            title="Llama a la ruta / del MS Plantilla">Home</a>
+         <a href="javascript:PlantillaCurling.procesarAcercaDe()" class="opcion-principal"
+            title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
+         <a href="javascript:PlantillaCurling.listarNombresCurling()" class="opcion-principal"
+            title="Realiza un listado con los nombres de los jugadores">Nombres Jugadores</a>
+         <a href="javascript:PlantillaCurling.listadoCompleto()" class="opcion-principal"
+            title="Realiza un listado con los nombres de los jugadores">Jugadores</a>
+         <a href="javascript:PlantillaCurling.listaOrdenada()" class="opcion-principal"
+            title="Realiza un listado con los nombres de los jugadores">Nombres Ordenados</a>
+         <a href="javascript:PlantillaCurling.listaOrdenadaC('nombre')" class="opcion-principal"
+            title="Realizar un listado de todos los nombres de todos los jugadores que hay en la BBDD ordenados alfabeticamente">Nombre</a>
+         <a href="javascript:PlantillaCurling.listaOrdenadaC('apellido')" class="opcion-principal"
+            title="Realizar un listado de todos los nombres de todos los jugadores que hay en la BBDD ordenados alfabeticamente">Apellido</a>
+         <a href="javascript:PlantillaCurling.listaOrdenadaC('fecha_nacimiento')" class="opcion-principal"
+            title="Realizar un listado de todos los nombres de todos los jugadores que hay en la BBDD ordenados alfabeticamente">Fecha_Nacimiento</a>
+         <a href="javascript:PlantillaCurling.listaOrdenadaC('categorias_jugadas')" class="opcion-principal"
+            title="Realizar un listado de todos los nombres de todos los jugadores que hay en la BBDD ordenados alfabeticamente">Categorias_jugadas</a>
+         <a href="javascript:PlantillaCurling.listaOrdenadaC('victorias')" class="opcion-principal"
+            title="Realizar un listado de todos los nombres de todos los jugadores que hay en la BBDD ordenados alfabeticamente">Victorias</a>
+         <a href="javascript:PlantillaCurling.listaOrdenadaC('derrotas')" class="opcion-principal"
+            title="Realizar un listado de todos los nombres de todos los jugadores que hay en la BBDD ordenados alfabeticamente">Derrotas</a>
+    </nav>
+
+
+    <nav>
+        <!-- FUNCIONES DEL MICROSERVICIO DE CURLING -->
+        <h2>MS Hípica: </h2>
+        <a href="javascript:Hipica.procesarHome()" class="opcion-principal"
+           title="Llama a la ruta / del MS Plantilla">Home</a>
+
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 1 -->
+        <a href="javascript:Hipica.procesarAcercaDe()" class="opcion-principal"
+           title="Llama a la ruta /acercade del MS Plantilla">Acerca de </a>
+
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 2 -->
+        <a href="javascript:Hipica.nombrarJinetes()" class="opcion-principal"
+           title="Realizar un listado de todos los nombres de los jinetes que hay en la BBDD">Nombrar a los jinetes</a>
+
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 4 -->
+        <a href="javascript:Hipica.listarJinetes()" class="opcion-principal"
+           title="Realizar un listado de los datos de todos los jinetes que hay en la BBDD">Listar jinetes</a>
+
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 6 -
+        <a href="javascript:Plantilla.mostrar('362460511033360588')" class="opcion-principal mostrar"
+           title="Muestra los datos de un determinado Jinete ">Mostrar un jinete</a>
+    -->
+        <!-- FUNCIÓN PARA LA HISTORIA DE USUARIO 3 -->
+        <a href="javascript:Hipica.listarJinetesAlafetico()" class="opcion-principal"
+           title="Realizar un listado en orden alfabetico de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes en orden Alfabetico</a>
+
+        <!-- FUNCIONES PARA LA HISTORIA DE USUARIO 5
+        <a href="javascript:Hipica.listarPorApellido()" class="opcion-principal"
+           title="Realizar un listado en orden alfabetico de los apellidos de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Apellidos</a>
+
+        <a href="javascript:Hipica.listarPorAltura()" class="opcion-principal"
+           title="Realizar un listado en orden de altura de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Altura</a>
+
+        <a href="javascript:Hipica.listarPorCaballo()" class="opcion-principal"
+           title="Realizar un listado en orden alfabetico del nombre del caballo de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Caballo</a>
+
+        <a href="javascript:Hipica.listarPorAño()" class="opcion-principal"
+           title="Realizar un listado por el año de nacimiento de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Año de nacimiento</a>
+
+        <a href="javascript:Hipica.listarPorClub()" class="opcion-principal"
+           title="Realizar un listado en orden alfabetico del nombre del club de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Club</a>
+
+        <a href="javascript:Hipica.listarPorDireccionClub()" class="opcion-principal"
+           title="Realizar un listado en orden alfabetico de la direccion del club de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Direccion Club</a>
+
+        <a href="javascript:Hipica.listarPorCompeticion()" class="opcion-principal"
+           title="Realizar un listado en orden alfabetico del tipo de competición de todos los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por Tipo Competición</a>
+
+        <a href="javascript:Hipica.listarPorAniosFederado()" class="opcion-principal"
+           title="Realizar un listado segun los años federados de los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por años federado</a>
+
+        <a href="javascript:Hipica.listarPorParticipaciones()" class="opcion-principal"
+           title="Realizar un listado segun el numero de participaciones los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por participaciones</a>
+
+        <a href="javascript:Hipica.listarPorGanados()" class="opcion-principal"
+           title="Realizar un listado segun el numero de torneos ganados los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por ganados</a>
+-->
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
     </nav>
 
     <!-- 
@@ -115,20 +219,32 @@
 
     <!-- Cargamos ficheros JS propios del proyecto -->
     <script src="js/front-end.js"></script>
+<<<<<<< HEAD
 
     <script src="js/ms-plantilla.js" defer></script>
 
     <script src="js/ms-golf.js"></script>
 
+=======
+    <script src="js/ms-golf.js"></script>
+    <script src="js/ms-Curling.js"></script>
+    <script src="js/ms-hipica.js"></script>
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 
 
     <!-- Cargamos ficheros spec con los tests -->
     <script src="js/front-end-spec.js"></script>
+<<<<<<< HEAD
 
     <script src="js/ms-plantilla-spec.js"></script>
 
     <script src="js/ms-golf-spec.js"></script>
 
+=======
+    <script src="js/ms-golf-spec.js"></script>
+    <script src="js/ms-Curling-spec.js"></script>
+    <script src="js/ms-hipica-spec.js"></script>
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 
 </body>
 

@@ -13,25 +13,35 @@ let Frontend = {};
 Frontend.API_GATEWAY = "http://localhost:8001"
 
 /// Algunas constantes relacionadas con CSS y HTML
+<<<<<<< HEAD
 
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 Frontend.CLASS_MOSTRAR = "mostrar"
 Frontend.CLASS_OCULTAR = "ocultar"
 
 /// Algunas constantes relacionadas con CSS y HTML
+<<<<<<< HEAD
 
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 Frontend.ID_SECCION_PRINCIPAL = "seccion-principal"
 Frontend.ID_SECCION_PRINCIPAL_TITULO = "seccion-principal-titulo"
 Frontend.ID_SECCION_PRINCIPAL_CONTENIDO = "seccion-principal-contenido"
 
 
+<<<<<<< HEAD
 Frontend.CLASS_MOSTRAR= "mostrar"
 Frontend.CLASS_OCULTAR= "ocultar"
 
 
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 /// Objeto Article dentro Frontend para tratar con el contenido del elemento Article del DOM
 Frontend.Article = {}
 
 /**
+<<<<<<< HEAD
 <<<<<<< HEAD
  * Devuelve una cantidad con formato de moneda en euros, es decir: N.NNN.NNN,NN€
  * @param {número} cantidad Cantidad que hay que devolver formateada
@@ -96,6 +106,8 @@ Frontend.Article.aniadirContenido = function (texto) {
 /**
 =======
 >>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
  * Quita a un elemento del cual se pasa él mismo o su ID la clase indicada por nombreClase
  * @param {string} elemento Elemento o id del elemento
  * @param {string} nombreClase Nombre de la clase a quitar
@@ -134,6 +146,7 @@ Frontend.aniadirClase = function (elemento, nombreClase) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Muestro el article
  * @returns El propio Article para poder concatenar llamadas
  */
@@ -147,6 +160,8 @@ Frontend.Article.mostrar = function () {
 /**
 =======
 >>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
+=======
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
  * Cambia toda la información del article
  * @param {String} titulo Información para el título del article 
  * @param {String} contenido INformacion para el contenido del article
@@ -160,4 +175,31 @@ Frontend.Article.actualizar = function (titulo, contenido) {
     document.getElementById( Frontend.ID_SECCION_PRINCIPAL_TITULO ).innerHTML = titulo
     document.getElementById( Frontend.ID_SECCION_PRINCIPAL_CONTENIDO ).innerHTML = contenido
     return this;
+<<<<<<< HEAD
 }
+=======
+}
+
+Frontend.Article.mostrar = function(){
+    let article = document.getElementById(Frontend.ID_SECCION_PRINCIPAL);
+}
+ Frontend.Article.borrarTitulo = function () {
+     document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML = "";
+     return this;
+ }
+ Frontend.Article.borrarContenido = function () {
+     document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO).innerHTML = "";
+     return this;
+ }
+ Frontend.Article.borrar = function () {
+     return this.borrarTitulo().borrarContenido();
+ }
+ Frontend.Article.sumarTitulo = function (texto) {
+     document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML += "\n" + texto;
+     return this;
+ }
+ Frontend.Article.actualizarBoton = function (titulo, contenido) {
+     this.borrar().sumarTitulo(titulo).mostrar()
+     return this;
+ }
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0

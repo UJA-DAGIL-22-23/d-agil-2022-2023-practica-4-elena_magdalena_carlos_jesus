@@ -15,20 +15,34 @@ describe('API Gateway: rutas estáticas', () => {
   describe('Rutas estáticas de MS Plantilla', () => {
     it('Devuelve MS Plantilla Home Page', (done) => {
       supertest(app)
+<<<<<<< HEAD
         .get('/patinaje/')
+=======
+        .get('/plantilla/')
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         .expect(200)
         .expect('Content-Type', /json/)
         .expect(function (res) {
           //console.log( res.body ); // Para comprobar qué contiene exactamente res.body
           assert(res.body.hasOwnProperty('mensaje'));
+<<<<<<< HEAD
           assert(res.body.mensaje === "Microservicio MS Patinaje: home");
+=======
+          assert(res.body.mensaje === "Microservicio MS Plantilla: home");
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 
         })
         .end((error) => { error ? done.fail(error) : done() })
     });
+<<<<<<< HEAD
     it('Devuelve MS Patinaje Acerca De', (done) => {
       supertest(app)
         .get('/patinaje/acercade')
+=======
+    it('Devuelve MS Plantilla Acerca De', (done) => {
+      supertest(app)
+        .get('/plantilla/acercade')
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         .expect(200)
         .expect('Content-Type', /json/)
         .expect(function (res) {
@@ -42,5 +56,46 @@ describe('API Gateway: rutas estáticas', () => {
   })
 });
 
+<<<<<<< HEAD
 
 
+=======
+describe('BBDD Jugadores', () => {
+  it(' > Obtener todos los nombres de los jugadores: debe tener un campo data que es un array de 12 objetos', (done) => {
+    supertest(app)
+      .get('/plantilla/getNombres')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect(function (res) {
+        // console.log( "Get Todos Nombres Jugadores", res.body ); // Para comprobar qué contiene exactamente res.body
+        assert(res.body.data.length === 12);
+      })
+      .end((error) => { error ? done.fail(error) : done() })
+  });
+
+  it(' > Obtener todos los jugadores: debe ser un array de 12 objetos', (done) => {
+    supertest(app)
+      .get('/plantilla/getTodos')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect(function (res) {
+        // console.log( "Get Todos Jugadores", res.body ); // Para comprobar qué contiene exactamente res.body
+        assert(res.body.data.length === 12);
+      })
+      .end((error) => { error ? done.fail(error) : done() })
+  });
+
+  it('Devuelve un jugador al consultar mediante getPorId', (done) => {
+    supertest(app)
+      .get('/plantilla/getPorId/358544323752493261') // Utilizamos un id de uno de los jugadores
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect(function (res) {
+        // console.log( res.body ); // Para comprobar qué contiene exactamente res.body
+        assert(res.body.data.nombre === 'Sergio'); // Este jugador debería de llamarse Sergio
+      })
+      .end((error) => { error ? done.fail(error) : done(); }
+      );
+  });
+});
+>>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
