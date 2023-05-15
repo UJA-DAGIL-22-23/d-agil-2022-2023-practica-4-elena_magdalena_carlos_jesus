@@ -13,23 +13,20 @@ let Frontend = {};
 Frontend.API_GATEWAY = "http://localhost:8001"
 
 /// Algunas constantes relacionadas con CSS y HTML
-<<<<<<< HEAD
-=======
+
 Frontend.CLASS_MOSTRAR = "mostrar"
 Frontend.CLASS_OCULTAR = "ocultar"
 
 /// Algunas constantes relacionadas con CSS y HTML
->>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
+
 Frontend.ID_SECCION_PRINCIPAL = "seccion-principal"
 Frontend.ID_SECCION_PRINCIPAL_TITULO = "seccion-principal-titulo"
 Frontend.ID_SECCION_PRINCIPAL_CONTENIDO = "seccion-principal-contenido"
 
-<<<<<<< HEAD
+
 Frontend.CLASS_MOSTRAR= "mostrar"
 Frontend.CLASS_OCULTAR= "ocultar"
 
-=======
->>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
 
 /// Objeto Article dentro Frontend para tratar con el contenido del elemento Article del DOM
 Frontend.Article = {}

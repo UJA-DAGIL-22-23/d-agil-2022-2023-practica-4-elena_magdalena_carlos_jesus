@@ -61,8 +61,7 @@ describe("Frontend.Article.actualizar: ", function () {
         })
 
 })
-<<<<<<< HEAD
-=======
+
 
 describe("Frontend.aniadirClase: ", function () {
     it("no da error con un elemento que NO tiene ninguna clase",
@@ -130,4 +129,4 @@ describe("Frontend.quitarClase: ", function () {
         })
 
 })
->>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
+

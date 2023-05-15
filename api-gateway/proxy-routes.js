@@ -16,6 +16,16 @@ const ROUTES = [
                 [`^/patinaje`]: '',
             },
         }
+    },
+    {
+        url: '/golf',
+        proxy: {
+            target: "http://localhost:8004",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/golf`]: '',
+            },
+        }
     }
 ]
 
