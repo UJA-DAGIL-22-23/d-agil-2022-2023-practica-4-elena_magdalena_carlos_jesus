@@ -15,20 +15,20 @@ describe('API Gateway: rutas estáticas', () => {
   describe('Rutas estáticas de MS Plantilla', () => {
     it('Devuelve MS Plantilla Home Page', (done) => {
       supertest(app)
-        .get('/plantilla/')
+        .get('/patinaje/')
         .expect(200)
         .expect('Content-Type', /json/)
         .expect(function (res) {
           //console.log( res.body ); // Para comprobar qué contiene exactamente res.body
           assert(res.body.hasOwnProperty('mensaje'));
-          assert(res.body.mensaje === "Microservicio MS Plantilla: home");
+          assert(res.body.mensaje === "Microservicio MS Patinaje: home");
 
         })
         .end((error) => { error ? done.fail(error) : done() })
     });
-    it('Devuelve MS Plantilla Acerca De', (done) => {
+    it('Devuelve MS Patinaje Acerca De', (done) => {
       supertest(app)
-        .get('/plantilla/acercade')
+        .get('/patinaje/acercade')
         .expect(200)
         .expect('Content-Type', /json/)
         .expect(function (res) {
