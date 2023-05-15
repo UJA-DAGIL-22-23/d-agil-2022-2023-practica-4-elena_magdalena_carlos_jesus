@@ -23,9 +23,13 @@
     display: none;
 }
 
+<<<<<<< HEAD
 .opcion-principal,
 .opcion-secundaria,
 .opcion-terciaria {
+=======
+.opcion-principal {
+>>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
     border: 2px solid rgba(100, 100, 100, 0.5);
     border-radius: .5em 0 .5em 0;
     padding: .5em;
@@ -34,6 +38,7 @@
     color: inherit;
 }
 
+<<<<<<< HEAD
 .opcion-principal:hover,
 .opcion-secundaria:hover,
 .opcion-secundaria:hover  {
@@ -48,3 +53,19 @@
     min-width: 5em;
     margin: 0.2em auto 0.2em auto;
 }
+=======
+.opcion-secundaria, .opcion-terciaria {
+    border: 2px solid rgba(100, 100, 100, 0.5);
+    padding: .1em;
+    margin: 3px;
+    text-decoration: none;
+    background-color: rgba(224, 224, 224, 0.355);
+    color: inherit;
+}
+
+.opcion-principal:hover, 
+.opcion-secundaria:hover,
+.opcion-terciaria:hover  {
+    background-color: rgba(100, 100, 100, 0.3);
+}
+>>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa

@@ -13,18 +13,29 @@ let Frontend = {};
 Frontend.API_GATEWAY = "http://localhost:8001"
 
 /// Algunas constantes relacionadas con CSS y HTML
+<<<<<<< HEAD
+=======
+Frontend.CLASS_MOSTRAR = "mostrar"
+Frontend.CLASS_OCULTAR = "ocultar"
+
+/// Algunas constantes relacionadas con CSS y HTML
+>>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
 Frontend.ID_SECCION_PRINCIPAL = "seccion-principal"
 Frontend.ID_SECCION_PRINCIPAL_TITULO = "seccion-principal-titulo"
 Frontend.ID_SECCION_PRINCIPAL_CONTENIDO = "seccion-principal-contenido"
 
+<<<<<<< HEAD
 Frontend.CLASS_MOSTRAR= "mostrar"
 Frontend.CLASS_OCULTAR= "ocultar"
 
+=======
+>>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
 
 /// Objeto Article dentro Frontend para tratar con el contenido del elemento Article del DOM
 Frontend.Article = {}
 
 /**
+<<<<<<< HEAD
  * Devuelve una cantidad con formato de moneda en euros, es decir: N.NNN.NNN,NN€
  * @param {número} cantidad Cantidad que hay que devolver formateada
  * @returns La misma cantidad, pero con formato de euros.
@@ -86,6 +97,8 @@ Frontend.Article.aniadirContenido = function (texto) {
 
 
 /**
+=======
+>>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
  * Quita a un elemento del cual se pasa él mismo o su ID la clase indicada por nombreClase
  * @param {string} elemento Elemento o id del elemento
  * @param {string} nombreClase Nombre de la clase a quitar
@@ -123,6 +136,7 @@ Frontend.aniadirClase = function (elemento, nombreClase) {
 }
 
 /**
+<<<<<<< HEAD
  * Muestro el article
  * @returns El propio Article para poder concatenar llamadas
  */
@@ -134,6 +148,8 @@ Frontend.Article.mostrar = function () {
 }
 
 /**
+=======
+>>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
  * Cambia toda la información del article
  * @param {String} titulo Información para el título del article 
  * @param {String} contenido INformacion para el contenido del article
