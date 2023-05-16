@@ -144,7 +144,7 @@ Hipica.formularioJinete = {}
 
 Hipica.formularioJinete.formulario = `
 <form method='post' action=''>
-<table width="100%" class="listado_jinetes">
+<table width="100%" class="listado-personas">
     <thead>
         <th>ID</th>
         <th>Nombre</th>
