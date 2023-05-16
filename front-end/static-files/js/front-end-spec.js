@@ -62,10 +62,7 @@ describe("Frontend.Article.actualizar: ", function () {
 
 })
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 describe("Frontend.aniadirClase: ", function () {
     it("no da error con un elemento que NO tiene ninguna clase",
         function () {
@@ -130,10 +127,5 @@ describe("Frontend.quitarClase: ", function () {
             // Devolvemos el elemento a su estado original:
             Frontend.aniadirClase(elemento, nombreClase)
         })
-
-<<<<<<< HEAD
 })
 
-=======
-})
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0

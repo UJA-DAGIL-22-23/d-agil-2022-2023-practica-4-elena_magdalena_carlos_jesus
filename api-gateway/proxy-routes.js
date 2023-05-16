@@ -8,28 +8,35 @@
 
 const ROUTES = [
     {
-<<<<<<< HEAD
-        url: '/patinaje',
-=======
         url: '/golf',
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         proxy: {
-            target: "http://localhost:8002",
+            target: "http://localhost:8007",
             changeOrigin: true,
             pathRewrite: {
-<<<<<<< HEAD
-                [`^/patinaje`]: '',
-            },
-        }
-    },
-    {
-        url: '/golf',
-=======
                 [`^/golf`]: '',
             },
         }
     },
-
+    {
+        url: '/hipica',
+        proxy: {
+            target: "http://localhost:8004",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/hipica`]: '',
+            },
+        }
+    },
+    {
+        url: '/patinaje',
+        proxy: {
+            target: "http://localhost:8001",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/patinaje`]: '',
+            },
+        }
+    },
     {
         url: '/plantillaCurling',
         proxy: {
@@ -40,22 +47,6 @@ const ROUTES = [
             },
         }
     },
-
-    {
-        url: '/hipica',
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
-        proxy: {
-            target: "http://localhost:8004",
-            changeOrigin: true,
-            pathRewrite: {
-<<<<<<< HEAD
-                [`^/golf`]: '',
-=======
-                [`^/hipica`]: '',
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
-            },
-        }
-    }
-]
+];
 
 exports.routes = ROUTES;

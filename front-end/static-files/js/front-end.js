@@ -13,30 +13,25 @@ let Frontend = {};
 Frontend.API_GATEWAY = "http://localhost:8001"
 
 /// Algunas constantes relacionadas con CSS y HTML
-<<<<<<< HEAD
 
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
 Frontend.CLASS_MOSTRAR = "mostrar"
 Frontend.CLASS_OCULTAR = "ocultar"
 
 /// Algunas constantes relacionadas con CSS y HTML
-<<<<<<< HEAD
 
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
 Frontend.ID_SECCION_PRINCIPAL = "seccion-principal"
 Frontend.ID_SECCION_PRINCIPAL_TITULO = "seccion-principal-titulo"
 Frontend.ID_SECCION_PRINCIPAL_CONTENIDO = "seccion-principal-contenido"
 
 
-<<<<<<< HEAD
+
 Frontend.CLASS_MOSTRAR= "mostrar"
 Frontend.CLASS_OCULTAR= "ocultar"
 
 
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
 /// Objeto Article dentro Frontend para tratar con el contenido del elemento Article del DOM
 Frontend.Article = {}
 
@@ -172,34 +167,31 @@ Frontend.Article.actualizar = function (titulo, contenido) {
     titulo = titulo || ""
     contenido = contenido || ""
     // Sustituyo el título y el contenido del articulo
-    document.getElementById( Frontend.ID_SECCION_PRINCIPAL_TITULO ).innerHTML = titulo
-    document.getElementById( Frontend.ID_SECCION_PRINCIPAL_CONTENIDO ).innerHTML = contenido
+    document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML = titulo
+    document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO).innerHTML = contenido
     return this;
-<<<<<<< HEAD
-}
-=======
-}
 
-Frontend.Article.mostrar = function(){
-    let article = document.getElementById(Frontend.ID_SECCION_PRINCIPAL);
+
+    Frontend.Article.mostrar = function () {
+        let article = document.getElementById(Frontend.ID_SECCION_PRINCIPAL);
+    }
+    Frontend.Article.borrarTitulo = function () {
+        document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML = "";
+        return this;
+    }
+    Frontend.Article.borrarContenido = function () {
+        document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO).innerHTML = "";
+        return this;
+    }
+    Frontend.Article.borrar = function () {
+        return this.borrarTitulo().borrarContenido();
+    }
+    Frontend.Article.sumarTitulo = function (texto) {
+        document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML += "\n" + texto;
+        return this;
+    }
+    Frontend.Article.actualizarBoton = function (titulo, contenido) {
+        this.borrar().sumarTitulo(titulo).mostrar()
+        return this;
+    }
 }
- Frontend.Article.borrarTitulo = function () {
-     document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML = "";
-     return this;
- }
- Frontend.Article.borrarContenido = function () {
-     document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO).innerHTML = "";
-     return this;
- }
- Frontend.Article.borrar = function () {
-     return this.borrarTitulo().borrarContenido();
- }
- Frontend.Article.sumarTitulo = function (texto) {
-     document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO).innerHTML += "\n" + texto;
-     return this;
- }
- Frontend.Article.actualizarBoton = function (titulo, contenido) {
-     this.borrar().sumarTitulo(titulo).mostrar()
-     return this;
- }
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0

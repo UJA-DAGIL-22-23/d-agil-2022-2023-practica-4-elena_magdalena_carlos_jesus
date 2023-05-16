@@ -1,113 +1,61 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<<<<<<< HEAD
-
-    <title>Aplicación Microservicios Plantilla</title>
-
-    <!-- Cargamos biblioteca Jasmine -->
-
-        
-
-    <title>Aplicación Microservicios Golf</title>
-=======
     <title>Aplicación Microservicios</title>
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 
     <!-- Cargamos biblioteca Jasmine -->
-
     <link rel="stylesheet" href="lib/jasmine-4.5.0/jasmine.css">
     <script src="lib/jasmine-4.5.0/jasmine.js"></script>
     <script src="lib/jasmine-4.5.0/jasmine-html.js"></script>
     <script src="lib/jasmine-4.5.0/boot0.js"></script>
     <script src="lib/jasmine-4.5.0/boot1.js"></script>
 
-<<<<<<< HEAD
-    
-
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
     <!-- Cargamos nuestros CSS -->
     <link rel="stylesheet" href="css/front-end.css">
-
-
 </head>
-
 <body>
-<<<<<<< HEAD
+<h1>Aplicación Microservicios</h1>
 
-    <h1>Aplicación Microservicios Plantilla</h1>
-    <!-- Barra de navegación de la aplicación -->
-  <nav>
-        <a href="javascript:Plantilla.procesarHome()" class="opcion-principal mostrar"
-            title="Llama a la ruta / del MS Plantilla">Home</a>
+<!-- Barra de navegación de la aplicación -->
+<nav>
+    <a href="javascript:Plantilla.procesarHome()" class="opcion-principal mostrar" title="Llama a la ruta / del MS Plantilla">Home</a>
+    <a href="javascript:Plantilla.procesarAcercaDe()" class="opcion-principal mostrar" title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
+    <a href="javascript:Plantilla.procesarListaNombres()" class="opcion-principal mostrar" title="Llama a la ruta /listanombres del MS Plantilla">Lista nombres</a>
+    <a href="javascript:Plantilla.procesarListaNombresAlfabeticos()" class="opcion-principal mostrar" title="Llama a la ruta /listanombresalfabeticos del MS Plantilla">Lista nombres alfabéticos</a>
+    <a href="javascript:Plantilla.procesarListaDatos()" class="opcion-principal mostrar" title="Llama a la ruta /listadatos del MS Plantilla">Lista datos</a>
+    <a href="javascript:Plantilla.procesarListaDatosOrdenados()" class="opcion-principal mostrar" title="Llama a la ruta /listadatosordenados del MS Plantilla">Lista datos ordenados por nombre</a>
+    <a href="javascript:Plantilla.procesarSiguiente('362980971564237005')" class="opcion-principal mostrar" title="Llama a la ruta /listapersonaunica del MS Plantilla">Lista solo 1 Persona</a>
 
-        <a href="javascript:Plantilla.procesarAcercaDe()" class="opcion-principal mostrar"
-            title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
-
-        <a href="javascript:Plantilla.procesarListaNombres()" class="opcion-principal mostrar"
-            title="Llama a la ruta /listanombres del MS Plantilla">Lista nombres</a>
-
-        <a href="javascript:Plantilla.procesarListaNombresAlfabeticos()" class="opcion-principal mostrar"
-            title="Llama a la ruta /listanombresalfabeticos del MS Plantilla">Lista nombres alfabéticos</a>
-
-        <a href="javascript:Plantilla.procesarListaDatos()" class="opcion-principal mostrar"
-            title="Llama a la ruta /listadatos del MS Plantilla">Lista datos</a>
-
-            <a href="javascript:Plantilla.procesarListaDatosOrdenados()" class="opcion-principal mostrar"
-            title="Llama a la ruta /listadatosordenados del MS Plantilla">Lista datos ordenados por nombre</a>
-
-            <a href="javascript:Plantilla.procesarSiguiente('362980971564237005')" class="opcion-principal mostrar"
-            title="Llama a la ruta /listapersonaunica del MS Plantilla">Lista solo 1 Persona</a>
-
-            <div class="opcion-principal mostrar">
-                <input type="text" id="nombre-input">
-                <button onclick="Plantilla.procesarNombre(document.getElementById('nombre-input').value)">Buscar por Nombre</button>
-            </div>
-            <div class="opcion-principal mostrar">
-                <input type="date" id="fecha-input">
-                <button onclick="Plantilla.procesarFecha(document.getElementById('fecha-input').value)">Nacidos antes del</button>
-            </div>
-            <div class="opcion-principal mostrar">
-                <input type="number" id="id-input">
-                <button onclick="Plantilla.procesarParticipaciones(document.getElementById('id-input').value)">Buscar por número de participaciones máxima</button>
-            </div>
-            <div class="opcion-principal mostrar">
-                <input type="text" id="direccion-input">
-                <button onclick="Plantilla.procesarDireccion(document.getElementById('direccion-input').value)">Buscar por Provincia</button>
-            </div>
-
-            <div class="opcion-principal mostrar">
-                <input type="text" id="pais-input">
-                <button onclick="Plantilla.procesarDireccionPais(document.getElementById('pais-input').value)">Buscar por Pais</button>
-            </div>
-              
+    <div class="opcion-principal mostrar">
+        <input type="text" id="nombre-input">
+        <button onclick="Plantilla.procesarNombre(document.getElementById('nombre-input').value)">Buscar por Nombre</button>
+    </div>
+    <div class="opcion-principal mostrar">
+        <input type="date" id="fecha-input">
+        <button onclick="Plantilla.procesarFecha(document.getElementById('fecha-input').value)">Nacidos antes del</button>
+    </div>
+    <div class="opcion-principal mostrar">
+        <input type="number" id="id-input">
+        <button onclick="Plantilla.procesarParticipaciones(document.getElementById('id-input').value)">Buscar por número de participaciones máxima</button>
+    </div>
+    <div class="opcion-principal mostrar">
+        <input type="text" id="direccion-input">
+        <button onclick="Plantilla.procesarDireccion(document.getElementById('direccion-input').value)">Buscar por Provincia</button>
+    </div>
+    <div
 
 
-    <h1>Aplicación Microservicios Golf</h1>
-    <!-- Barra de navegación de la aplicación -->
-    <nav>
-=======
     <h1>Aplicación Microservicios</h1>
+
     <!-- Barra de navegación de la aplicación -->
     <nav>
         <!-- FUNCIONES DEL MICROSERVICIO DE GOLF -->
-        <h2>MS Golf: </h2>
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
-        <a href="javascript:Golf.procesarHome()" class="opcion-principal"
-            title="Llama a la ruta / del MS Golf">Home</a>
-        <a href="javascript:Golf.procesarAcercaDe()" class="opcion-principal"
-            title="Llama a la ruta /acercade del MS Golf">Acerca de</a>
-        <a href="javascript:Golf.procesarNombres()" class="opcion-principal"
-            title="Llama a la ruta /getNombres del MS Golf">Nombres Jugadores</a>
-        <a href="javascript:Golf.procesarJugadores()" class="opcion-principal mostrar"
-            title="Llama a la ruta /getTodos del MS Golf">Listar Jugadores</a>
-        <a href="javascript:Golf.aniadeJugador()" class="opcion-principal mostrar"
-            title="Llama a la ruta /getTodos del MS Golf">Añadir jugador</a>
-<<<<<<< HEAD
-
-=======
+        <h2>MS Golf:</h2>
+        <a href="javascript:Golf.procesarHome()" class="opcion-principal" title="Llama a la ruta / del MS Golf">Home</a>
+        <a href="javascript:Golf.procesarAcercaDe()" class="opcion-principal" title="Llama a la ruta /acercade del MS Golf">Acerca de</a>
+        <a href="javascript:Golf.procesarNombres()" class="opcion-principal" title="Llama a la ruta /getNombres del MS Golf">Nombres Jugadores</a>
+        <a href="javascript:Golf.procesarJugadores()" class="opcion-principal mostrar" title="Llama a la ruta /getTodos del MS Golf">Listar Jugadores</a>
+        <a href="javascript:Golf.aniadeJugador()" class="opcion-principal mostrar" title="Llama a la ruta /getTodos del MS Golf">Añadir jugador</a>
     </nav>
     <nav>
         <!-- FUNCIONES DEL MICROSERVICIO DE CURLING -->
@@ -194,7 +142,7 @@
         <a href="javascript:Hipica.listarPorGanados()" class="opcion-principal"
            title="Realizar un listado segun el numero de torneos ganados los jinetes (y sus datos) y  que hay en la BBDD">Listar jinetes por ganados</a>
 -->
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
     </nav>
 
     <!-- 
@@ -219,32 +167,31 @@
 
     <!-- Cargamos ficheros JS propios del proyecto -->
     <script src="js/front-end.js"></script>
-<<<<<<< HEAD
+
 
     <script src="js/ms-plantilla.js" defer></script>
 
     <script src="js/ms-golf.js"></script>
 
-=======
+
     <script src="js/ms-golf.js"></script>
     <script src="js/ms-Curling.js"></script>
     <script src="js/ms-hipica.js"></script>
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
 
 
     <!-- Cargamos ficheros spec con los tests -->
     <script src="js/front-end-spec.js"></script>
-<<<<<<< HEAD
+
 
     <script src="js/ms-plantilla-spec.js"></script>
 
     <script src="js/ms-golf-spec.js"></script>
 
-=======
+
     <script src="js/ms-golf-spec.js"></script>
     <script src="js/ms-Curling-spec.js"></script>
     <script src="js/ms-hipica-spec.js"></script>
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 
 </body>
 

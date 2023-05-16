@@ -8,7 +8,7 @@
 // SPECS para Jasmine
 
 // Constantes para usar en las pruebas
-<<<<<<< HEAD
+
 const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
 const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
 const TITULO_HOME = "Golf Home"
@@ -19,7 +19,6 @@ const TITULO_MUESTRA_JUGADOR = "Mostrar un jugador"
 const TITULO_ANIADE_JUGADOR = "Añadir un jugador"
 
 const datosDescargadosPrueba = {
-=======
 const elementoTituloGolf = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
 const elementoContenidoGolf = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
 const TITULO_HOME_GOLF = "Golf Home"
@@ -30,7 +29,7 @@ const TITULO_MUESTRA_JUGADOR_GOLF = "Mostrar un jugador"
 const TITULO_ANIADE_JUGADOR_GOLF = "Añadir un jugador"
 
 const datosDescargadosPruebaGolf = {
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
     mensaje: "Mensaje de prueba descargado",
     autor: "Prueba de autor",
     email: "Prueba de email",
@@ -81,32 +80,32 @@ describe("Golf.mostrarHome: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Golf.mostrarHome()
-<<<<<<< HEAD
+
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
             expect(elementoContenido.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
-=======
+
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_HOME_GOLF)
             expect(elementoContenidoGolf.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
         })
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Golf.mostrarHome(23)
-<<<<<<< HEAD
+
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
             expect(elementoContenido.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
-=======
+
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_HOME_GOLF)
             expect(elementoContenidoGolf.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje",
         function () {
             // Objeto vacío
             Golf.mostrarHome({})
-<<<<<<< HEAD
+
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
             expect(elementoContenido.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
 
@@ -114,7 +113,7 @@ describe("Golf.mostrarHome: ", function () {
             Golf.mostrarHome({ foo: "bar" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
             expect(elementoContenido.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
-=======
+
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_HOME_GOLF)
             expect(elementoContenidoGolf.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
 
@@ -122,20 +121,16 @@ describe("Golf.mostrarHome: ", function () {
             Golf.mostrarHome({ foo: "bar" })
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_HOME_GOLF)
             expect(elementoContenidoGolf.innerHTML).toBe(Golf.datosDescargadosNulos.mensaje)
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
-<<<<<<< HEAD
             Golf.mostrarHome(datosDescargadosPrueba)
             expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
             expect(elementoContenido.innerHTML).toBe(datosDescargadosPrueba.mensaje)
-=======
             Golf.mostrarHome(datosDescargadosPruebaGolf)
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_HOME_GOLF)
             expect(elementoContenidoGolf.innerHTML).toBe(datosDescargadosPruebaGolf.mensaje)
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
@@ -144,32 +139,25 @@ describe("Golf.mostrarAcercaDe: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Golf.mostrarAcercaDe()
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_ACERCA_DE_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Golf.mostrarAcercaDe(23)
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_ACERCA_DE_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje o autor o email o fecha ",
         function () {
             // Objeto vacío
             Golf.mostrarAcercaDe({})
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -199,7 +187,6 @@ describe("Golf.mostrarAcercaDe: ", function () {
             expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.autor) >= 0).toBeTrue()
             expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.email) >= 0).toBeTrue()
             expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.fecha) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_ACERCA_DE_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -229,7 +216,6 @@ describe("Golf.mostrarAcercaDe: ", function () {
             expect(elementoContenidoGolf.innerHTML.search(datosDescargadosPruebaGolf.autor) >= 0).toBeTrue()
             expect(elementoContenidoGolf.innerHTML.search(datosDescargadosPruebaGolf.email) >= 0).toBeTrue()
             expect(elementoContenidoGolf.innerHTML.search(datosDescargadosPruebaGolf.fecha) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
@@ -238,32 +224,25 @@ describe("Golf.mostrarNombres: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Golf.mostrarNombres()
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
     
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Golf.mostrarNombres(23)
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo data",
         function () {
             // Objeto vacío
             Golf.mostrarNombres({})
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -271,7 +250,6 @@ describe("Golf.mostrarNombres: ", function () {
             Golf.mostrarNombres({ foo: "bar" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -279,19 +257,15 @@ describe("Golf.mostrarNombres: ", function () {
             Golf.mostrarNombres({ foo: "bar" })
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
             Golf.mostrarNombres({ data: ["Tiger", "Tails"] })
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search({ data: ["Tiger", "Tails"] }) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search({ data: ["Tiger", "Tails"] }) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
@@ -300,32 +274,25 @@ describe("Golf.mostrarNombresOrdenados: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Golf.mostrarNombresOrdenados()
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
     
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Golf.mostrarNombresOrdenados(23)
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo data",
         function () {
             // Objeto vacío
             Golf.mostrarNombresOrdenados({})
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -333,7 +300,6 @@ describe("Golf.mostrarNombresOrdenados: ", function () {
             Golf.mostrarNombresOrdenados({ foo: "bar" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -341,19 +307,15 @@ describe("Golf.mostrarNombresOrdenados: ", function () {
             Golf.mostrarNombresOrdenados({ foo: "bar" })
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
             Golf.mostrarNombresOrdenados({ data: ["BBB", "AAA"] })
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_NOMBRES)
             expect(elementoContenido.innerHTML.search({ data: ["AAA", "BBB"] }) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_NOMBRES_GOLF)
             expect(elementoContenidoGolf.innerHTML.search({ data: ["AAA", "BBB"] }) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
@@ -380,32 +342,25 @@ describe("Golf.imprimeMuchosJugadores: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Golf.imprimeMuchosJugadores()
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_LISTADO)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_LISTADO_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
     
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Golf.imprimeMuchosJugadores(23)
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_LISTADO)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_LISTADO_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo data",
         function () {
             // Objeto vacío
             Golf.imprimeMuchosJugadores({})
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_LISTADO)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -413,7 +368,6 @@ describe("Golf.imprimeMuchosJugadores: ", function () {
             Golf.imprimeMuchosJugadores({ foo: "bar" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_LISTADO)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_LISTADO_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -421,19 +375,15 @@ describe("Golf.imprimeMuchosJugadores: ", function () {
             Golf.imprimeMuchosJugadores({ foo: "bar" })
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_LISTADO_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
             Golf.imprimeMuchosJugadores(jugadoresPrueba)
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_LISTADO)
             expect(elementoContenido.innerHTML.search(jugadoresPrueba) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_LISTADO_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(jugadoresPrueba) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
@@ -487,32 +437,25 @@ describe("Golf.imprimeUnJugador: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Golf.imprimeUnJugador()
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_MUESTRA_JUGADOR)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_MUESTRA_JUGADOR_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
     
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Golf.imprimeUnJugador(23)
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_MUESTRA_JUGADOR)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_MUESTRA_JUGADOR_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo data",
         function () {
             // Objeto vacío
             Golf.imprimeUnJugador({})
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_MUESTRA_JUGADOR)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -520,7 +463,6 @@ describe("Golf.imprimeUnJugador: ", function () {
             Golf.imprimeUnJugador({ foo: "bar" })
             expect(elementoTitulo.innerHTML).toBe(TITULO_MUESTRA_JUGADOR)
             expect(elementoContenido.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_MUESTRA_JUGADOR_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
@@ -528,19 +470,15 @@ describe("Golf.imprimeUnJugador: ", function () {
             Golf.imprimeUnJugador({ foo: "bar" })
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_MUESTRA_JUGADOR_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(Golf.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
             Golf.imprimeUnJugador(jugadoresPrueba.data[2])
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_MUESTRA_JUGADOR)
             expect(elementoContenido.innerHTML.search(jugadoresPrueba[2]) >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_MUESTRA_JUGADOR_GOLF)
             expect(elementoContenidoGolf.innerHTML.search(jugadoresPrueba[2]) >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
@@ -549,13 +487,10 @@ describe("Golf.aniadeJugador: ", function () {
     it("muestra correctamente el formulario",
         function () {
             Golf.aniadeJugador()
-<<<<<<< HEAD
             expect(elementoTitulo.innerHTML).toBe(TITULO_ANIADE_JUGADOR)
             expect(elementoContenido.innerHTML.search('formularioNuevoJugador') >= 0).toBeTrue()
-=======
             expect(elementoTituloGolf.innerHTML).toBe(TITULO_ANIADE_JUGADOR_GOLF)
             expect(elementoContenidoGolf.innerHTML.search('formularioNuevoJugador') >= 0).toBeTrue()
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
         })
 })
 
