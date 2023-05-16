@@ -21,9 +21,8 @@ TABLERO DE TRELLO EL COMIENZO DE LA ITERACIÓN 1
 ![Tablero de inicio de la Iteracion 1 ](./assets/img/Tablero_trello_Iteracion_1_Inicio.png)
 
 TABLERO DE TRELLO EL FINAL DE LA ITERACIÓN 1
-
 ![Tablero final de la Iteracion 1 ](./assets/img/Tablero_trello_Iteracion_1_Final.png)
-
+### -----------------------------------------------------
 
 ###  FUNCIONAMIENTO DE LA APLICACIÓN
 
@@ -41,14 +40,53 @@ Estas han sido las funcioes modificadas:
 Los archivos modificados para la integración han sido: 
 ```
 · ms-hipica
-· ms-hipica\server.js
+· front-end/static-files/js/ms-hipica.js
+· front-end/static-files/js/ms-hipica-spec.js
+· ms-hipica/server.js
+· api-gateway/proxy-routes.js
+· front-end/static-files/index.html
 ```
-En el cúal se modifico el puertp 8002 por 8004 de modo que no interfiere con a
-ruta de lor proyectos de mis compañeros.
+Primero modificamos con el nombre la carpeta *ms-plantilla* a *ms-hipica*, lo cual no 
+supuso un gran cambio.
+A continuación alteramos el nombre del fichero *ms-plantilla.js a *ms-hipica.js*
+Lo cual supuso modificar todo lo relativo al nombre de la clase en todos los 
+archivos donde fuera relevante, al igual que con *ms-plantilla-spec.js*
+
+Todos los compañeros compartimos el archicho *ms-plantilla.css*, por lo que 
+cambié el nombre de *listado-jinetes* a *listado-personas* en la clase *ms-hipica.js*.
+
+
+En el fichero *ms-hipica/server.js* alteré el puerto 8002 por 8004 de modo
+que no interfiere con a  ruta de lor proyectos de mis compañeros.
 ```
     const port = 8004;
 ```
-HISTORIA DE USUARIO 1
+Para que la nueva ruta fuera accesible para el api-gateway compartido entre
+mis copeñros y yo añadí el siguiente código enlazandolo con mis proyecto Hípica 
+en el fichero *api-gateway/proxy-routes.js*
+```
+    {
+        url: '/hipica',
+        proxy: {
+            target: "http://localhost:8004",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/hipica`]: '',
+            },
+        }
+    }   
+ ```
 
+Por último, para que el usuario tuviera acceso a el contenido de la aplicación
+añadí todas las funcionalidades al archivo *index.html*, y los import que permitían
+el acceso al código y los test: 
+ ```
+    <script src="js/ms-hipica.js"></script>
+```
+```
+    <script src="js/ms-hipica-spec.js"></script>
+```
+
+###  *HISTORIA DE USUARIO 1*
 ![Resultado de la HU 1](./assets/img/Historia_de_Usuario_1.png)
 
