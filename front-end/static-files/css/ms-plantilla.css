@@ -5,12 +5,7 @@
  * @date 03-Feb-2023
  */
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
  table.listado-personas {
     width: 100%;
     border: 1px solid rgba(0, 0, 100, 0.8);
@@ -61,9 +56,6 @@ table.listado-personas td {
 
 table.listado-personas {
     width: 100%;
-<<<<<<< HEAD
-
-=======
 }
 
 table.Estilo_Nombres{
@@ -94,4 +86,3 @@ table.Estilo_Completo thead th{
    background-color: #9999FF;
    height: 2em;
 }
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0

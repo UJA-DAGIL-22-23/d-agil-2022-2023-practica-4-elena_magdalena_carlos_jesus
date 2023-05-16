@@ -7,10 +7,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import url('./ms-plantilla.css');
-<<<<<<< HEAD
 @import url('./ms-golf.css');
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
 
 * {
     font-family: 'Source Sans Pro', sans-serif;
@@ -36,13 +34,10 @@
     color: inherit;
 }
 
-<<<<<<< HEAD
 .opcion-principal:hover {
     background-color: rgba(100, 100, 100, 0.3);
 }
 
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
 .opcion-secundaria, .opcion-terciaria {
     border: 2px solid rgba(100, 100, 100, 0.5);
     padding: .1em;
@@ -52,16 +47,12 @@
     color: inherit;
 }
 
-<<<<<<< HEAD
-=======
-.opcion-principal:hover, 
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+.opcion-principal:hover,
 .opcion-secundaria:hover,
 .opcion-terciaria:hover  {
     background-color: rgba(100, 100, 100, 0.3);
 }
 
-<<<<<<< HEAD
 .opcion-principal {
     margin: 0 .5em 0 .5em;
 }
@@ -71,12 +62,11 @@
     max-width: 5em;
     min-width: 5em;
     margin: 0.2em auto 0.2em auto;
-=======
 nav {
     margin-top: 20px;
 }
 
 nav h2 {
     display: inline;
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
+
 }

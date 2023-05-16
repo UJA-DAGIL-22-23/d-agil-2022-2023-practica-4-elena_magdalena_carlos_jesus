@@ -12,7 +12,7 @@
 // Necesario para conectar a la BBDD faunadb
 
 const fetch=require("node-fetch");
-const URL_MS_patinaje="http://localhost:8002";
+const URL_MS_plantilla="http://localhost:8001";
 
 const faunadb = require('faunadb'),
     q = faunadb.query;
