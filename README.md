@@ -133,4 +133,4 @@ Por último en el index hemos añadido nuestro botones que se veran en el html d
 clases de ms-Curling.js y ms-Curling-spec.js
 
 ###  *HISTORIA DE USUARIO 3*
-![Resultado de la HU 3](./assets/img/HU_1_Curling.png)
+![Resultado de la HU 3](./assets/img/HU_1_Curling.PNG)
