@@ -93,3 +93,44 @@ el acceso al código y los test:
 ###  *HISTORIA DE USUARIO 1*
 ![Resultado de la HU 1](./assets/img/Historia_de_Usuario_1.png)
 
+### PROYECTO CURLING
+
+Ahora vamos a hablar sobre las modificaciones que hemos hecho dentro de Curling para poder unirlo al resto de proyectos
+y trabajos de nuestros compañeros de equipo. Para ellos tuvimos que modificar una serie de clases y carpetas para que todas
+ellas no tuviesen el mismo nombre, y son:
+
+```
+ -  ms-Curling -----> carpeta
+ -  front-end/static-files/js/ms-Curling.js
+ -  front-end/static-files/js/ms-Curling-spec.js
+ -  ms-Curling/server.js
+ -  api-gateway/proxy-routes.js
+ -  front-end/static-files/index.html
+```
+
+Debemos cambiar la carpeta para que los nombres de cada una de las carpetas ms no se fueran pisando; por lo tanto, cada proyecto 
+pondrá el nombre que es su deporte. Luego de eso, dentro de la clase ms-Curling.js y ms-Curling-spec-js hemos cambiado el 
+nombre de la plantilla dentro de ella; en mi caso, pasa de Plantilla a PlantillaCurling, en las dos clases por igual,
+
+En ms-Curling/server.js hemos indicado cual es el nuevo puerto en el que va a trabajar nuestro trabajo en este caso hemos 
+intercambiado el 8002 por el 8003 en mi caso. En proxy-ruter he añadido la ruta de mi trabajo para que se pueda conectar 
+con la clase de front-end, y hemos añadido el siguiente segmente dentro de (const ROUTES):
+
+```
+   {
+        url: '/plantillaCurling',
+        proxy: {
+            target: "http://localhost:8003",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/plantillaCurling`]: '',
+            },
+        }
+    },
+```
+
+Por último en el index hemos añadido nuestro botones que se veran en el html de la página que conectan direcamtne con las 
+clases de ms-Curling.js y ms-Curling-spec.js
+
+###  *HISTORIA DE USUARIO 3*
+![Resultado de la HU 3](./assets/img/HU_1_Curling.png)
