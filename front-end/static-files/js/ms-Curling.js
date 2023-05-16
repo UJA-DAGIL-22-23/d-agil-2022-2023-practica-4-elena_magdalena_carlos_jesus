@@ -277,7 +277,7 @@ PlantillaCurling.Ordenamos_Nombres = async function (callbackFn){
         const url = Frontend.API_GATEWAY + "/plantillaCurling/getTodos"
         response = await fetch(url)
     } catch (error) {
-        alert("Error: No se han podido acceder al API Geteway")
+        alert("Error: No se han podido acceder al API Gateway")
         console.error(error)
     }
 

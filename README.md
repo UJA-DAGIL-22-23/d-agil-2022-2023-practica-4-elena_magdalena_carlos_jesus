@@ -9,8 +9,11 @@
 * *NOMBRE*: Elena
 * *APELLIDOS*: Gómez Padilla
 * *EMAIL*: egp00044@red.ujaen.es
-
-(insertar vuestros nombres aqui)
+* 
+*  
+* *NOMBRE* : Magdalena
+* *APELLIDOS*: Bueno Pedrera
+* *EMAIL*: mmbp0003@gmail.com
 
 ### -----------------------------------------------------
 ###  *TABLERO DE TRELLO*

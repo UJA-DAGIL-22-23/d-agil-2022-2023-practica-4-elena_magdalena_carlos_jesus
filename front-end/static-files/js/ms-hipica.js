@@ -119,7 +119,7 @@ Hipica.mostrarAcercaDe = function (datosDescargados) {
     Frontend.Article.actualizar("hipica Acerca de", mensajeAMostrar)
 }
 
-/***************************************************************************************************/
+/*********************************/
 
 Hipica.jineteComoTabla = function (jinete) {
     return Hipica.tablaJinetes.cabecera
@@ -137,7 +137,7 @@ Hipica.jineteComoFormulario = function (jinete) {
     return Hipica.formularioJinete.actualiza( jinete );
 }
 
-/***************************************************************************************************/
+/*********************************/
 
 
 Hipica.formularioJinete = {}
@@ -171,7 +171,7 @@ Hipica.formularioJinete.formulario = `
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-nombre_club_actual" required value="${Hipica.hipicaTags.NOMBRE_CLUB_ACTUAL}" name="nombre_club_actual"/></td>
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-direccion_club" required value="${Hipica.hipicaTags.DIRECCION_CLUB}" name="direccion_club"/></td>
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-tipo_competicion" required value="${Hipica.hipicaTags.TIPO_COMPETICION}" name="tipo_competicion"/></td>
-            <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-años_federado" required value="${Hipica.hipicaTags.AÑOS_FEDERADO}" name="años_federado"/></td>
+            
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-numero_participaciones" required value="${Hipica.hipicaTags.NUMERO_PARTICIPACIONES}" name="numero_participaciones"/></td>
             <td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-numero_torneos_ganados" required value="${Hipica.hipicaTags.NUMERO_TORNEOS_GANADOS}" name="numero_torneos_ganados"/></td>
         </tr>
@@ -179,8 +179,8 @@ Hipica.formularioJinete.formulario = `
 </table>
 </form>`;
 
-/***************************************************************************************************/
-
+//<td><input type="text" class="form-persona-elemento editable" disabled id="form-persona-años_federado" required value="${Hipica.hipicaTags.AÑOS_FEDERADO}" name="años_federado"/></td>
+/*********************************/
 // hipica para poner los datos de varios jinetes dentro de una tabla
 Hipica.tablaJinetes = {}
 
@@ -211,8 +211,8 @@ Hipica.tablaJinetes.cabeceraJinetesTodos = `<table width="100%" class="listado-p
         <th width="15%">Nombre</th>
         <th width="10%">Apellidos</th>
         <th width="10%">Altura</th>      
-        <th width="10%">Datos del caballo</th>
-        <th width="10%">Fecha de nacimiento</th>
+        <th width="25%">Datos del caballo</th>
+        <th width="25%">Fecha de nacimiento</th>
         <th width="15%">Nombre del club</th>
         <th width="10%">Dirección</th>
         <th width="10%">Tipo de competicion</th>
@@ -259,7 +259,7 @@ Hipica.tablaJinetes.cuerpoJinetesTodos=
     <td>${Hipica.hipicaTags.NOMBRE_CLUB_ACTUAL}</td>   
     <td>${Hipica.hipicaTags.DIRECCION_CLUB }</td>   
     <td>${Hipica.hipicaTags.TIPO_COMPETICION }</td>   
-    <td>${Hipica.hipicaTags.AÑOS_FEDERADO}"</td>
+    
     <td>${Hipica.hipicaTags["NUMERO_PARTICIPACIONES"]}</td>
     <td>${Hipica.hipicaTags["NUMERO_TORNEOS_GANADOS"]}</td>
     
@@ -268,14 +268,14 @@ Hipica.tablaJinetes.cuerpoJinetesTodos=
     </td>
     
 </tr> `;
-
+//<td>${Hipica.hipicaTags.AÑOS_FEDERADO}"</td>
 
 /**
  * PIE DE LAS TABLAS
  * @returns {string}
  */Hipica.tablaJinetes.pie = `</tbody> </table>`;
 
-/***************************************************************************************************/
+/*********************************/
 
 /**
  * Actualiza el cuerpo de la hipica deseada con los datos de la Jinete que se le pasa
@@ -290,18 +290,19 @@ Hipica.sustituyeTags = function (hipica, jinetes) {
         .replace(new RegExp(Hipica.hipicaTags.APELLIDOS  , 'g'), jinetes.data.nombre_jinete.apellidos )
         .replace(new RegExp(Hipica.hipicaTags.ALTURA_JINETE  , 'g'), jinetes.data.altura_jinete + " cm" )
         .replace(new RegExp(Hipica.hipicaTags.DATOS_CABALLO  , 'g'), jinetes.data.datos_caballo.nombre_caballo + " Edad: " + jinetes.data.datos_caballo.edad  + " Sexo: "+ jinetes.data.datos_caballo.sexo )
-        .replace(new RegExp(Hipica.hipicaTags.FECHA_NACIMIENTO  , 'g'), jinetes.data.fecha_nacimiento.dia + "/" + jinetes.data.fecha_nacimiento.mes + "/" + jinetes.data.fecha_nacimiento.año)
+        .replace(new RegExp(Hipica.hipicaTags.FECHA_NACIMIENTO  , 'g'), jinetes.data.fecha_nacimiento.dia + "/" + jinetes.data.fecha_nacimiento.mes )
         .replace(new RegExp(Hipica.hipicaTags.NOMBRE_CLUB_ACTUAL  , 'g'), jinetes.data.nombre_club_actual )
         .replace(new RegExp(Hipica.hipicaTags.DIRECCION_CLUB , 'g'), jinetes.data.direccion_club.calle + ", " + jinetes.data.direccion_club.numero + ", " + jinetes.data.direccion_club.localidad + ", " + jinetes.data.direccion_club.provincia + ", " + jinetes.data.direccion_club.pais)
         .replace(new RegExp(Hipica.hipicaTags.TIPO_COMPETICION , 'g'), jinetes.data.tipo_competicion)
-        .replace(new RegExp(Hipica.hipicaTags.AÑOS_FEDERADO, 'g'), jinetes.data.años_federado)
+
         .replace(new RegExp(Hipica.hipicaTags.NUMERO_PARTICIPACIONES, 'g'), jinetes.data.numero_particiapciones_torneo)
         .replace(new RegExp(Hipica.hipicaTags.NUMERO_TORNEOS_GANADOS, 'g'), jinetes.data.numero_torneos_ganados)
 
 
 }
-
-/***************************************************************************************************/
+//"/" + jinetes.data.fecha_nacimiento.año
+//.replace(new RegExp(Hipica.hipicaTags.AÑOS_FEDERADO, 'g'), jinetes.data.años_federado)
+/*********************************/
 
 /**
  * FUNCIÓN PARA LA HISTORIA DE USUARIO 2
@@ -335,7 +336,7 @@ Hipica.formularioJinete.actualiza = function (jinete) {
 }
 
 
-/***************************************************************************************************/
+/*********************************/
 
 
 /**
@@ -419,7 +420,7 @@ Hipica.recuperaAlfabeticamente = async function (callBackFn) {
 }
 
 
-/***************************************************************************************************/
+/*********************************/
 /**
  * FUNCIÓN PARA LA HISTORIA DE USUARIO 2
  * Función para mostrar en jinete todos los nombres de los jinetes
@@ -551,14 +552,15 @@ Hipica.imprimePorCaballo = function (vector) {
 }
 
 //BUSQUEDA POR AÑO DE NACIMIENTO
+/*
 Hipica.imprimePorAño = function (vector) {
     if (vector && Array.isArray(vector)) {
         vector.sort(function (a, b) {
             if (a.data.fecha_nacimiento.año < b.data.fecha_nacimiento.año  ) {
-                    return -1;
+                return -1;
             } //A va después alfabeticamente que B
             if (a.data.fecha_nacimiento.año >b.data.fecha_nacimiento.año) {
-                    return 1;
+                return 1;
             } // B va después alfabeticamente que A
             return 0;
         });
@@ -569,6 +571,8 @@ Hipica.imprimePorAño = function (vector) {
     msj += Hipica.tablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por AÑO DE NACIMIENTO" , msj)
 }
+*/
+
 
 //BUSQUEDA POR NOMBRE DEL CLUB
 Hipica.imprimePorClub = function (vector) {
@@ -630,6 +634,7 @@ Hipica.imprimePorCompeticion = function (vector) {
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por TIPO COMPETICION" , msj)
 }
 
+/*
 //BUSQUEDA POR AÑOS FEDERADO
 Hipica.imprimePorFederado = function (vector) {
     if (vector && Array.isArray(vector)) {
@@ -649,7 +654,7 @@ Hipica.imprimePorFederado = function (vector) {
     msj += Hipica.tablaJinetes.pie
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por AÑOS FEDERADO" , msj)
 }
-
+*/
 //BUSQUEDA POR NUMERO DE PARTICIPACIONES
 Hipica.imprimePorParticipaciones = function (vector) {
     if (vector && Array.isArray(vector)) {
@@ -690,7 +695,7 @@ Hipica.imprimePorGanado = function (vector) {
     Frontend.Article.actualizar("Listado de los jinetes Ordenador por TORNEOS GANADOS" , msj)
 }
 
-/***************************************************************************************************/
+/*********************************/
 
 /**
  * Función principal para responder al evento de elegir la opción "Home"
@@ -712,8 +717,9 @@ Hipica.procesarAcercaDe = function () {
  * FUNCIÓN PARA LA HISTORIA DE USUARIO 2
  * Función principal para recuperar las jinetes desde el MS, y posteriormente imprimirlas
  */
+
 Hipica.nombrarJinetes = function () {
-        Hipica.recupera(Hipica.imprimeNombres);
+    Hipica.recupera(Hipica.imprimeNombres);
 }
 
 
@@ -763,10 +769,12 @@ Hipica.listarPorCaballo = function () {
     Hipica.recupera(Hipica.imprimePorCaballo);
 }
 
+/*
 //ORDENADO POR AÑO DE NACIMIENTO
 Hipica.listarPorAño = function () {
     Hipica.recupera(Hipica.imprimePorAño);
 }
+*/
 
 //ORDENADO POR ORDEN ALFABETICO DEL NOMBRE DEL CLUB
 Hipica.listarPorClub = function () {
@@ -802,7 +810,7 @@ Hipica.listarPorGanados = function () {
 
 
 
-/***************************************************************************************************/
+/*********************************/
 
 
 /**
@@ -843,7 +851,7 @@ Hipica.ocultarOcionesTerciariasEditar = function () {
     return this
 }
 
-/*********************************************************************************************/
+/*******************************/
 
 /**
  * Función que permite modificar los datos de una Jinete
@@ -874,7 +882,7 @@ Hipica.habilitarCamposEditables = function () {
 }
 
 
-/*********************************************************************************************/
+/*******************************/
 
 /**
  * ????Muestra las opciones que tiene el usuario cuando selecciona Editar

@@ -238,8 +238,8 @@ describe("Hipica.imprimePorCaballo: ", function() {
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
-
-describe("Hipica.imprimePorAño: ", function() {
+/**
+describe("Hipica.imprimePorAnio: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
         Hipica.imprimePorAño([])
         expect(elementoTitulo.innerHTML).toBe(JINETE_NACIMIENTO)
@@ -251,6 +251,7 @@ describe("Hipica.imprimePorAño: ", function() {
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
+ */
 
 describe("Hipica.imprimePorClub: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
@@ -290,7 +291,7 @@ describe("Hipica.imprimePorCompeticion: ", function() {
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
-
+/**
 describe("Hipica.imprimePorFederado: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
         Hipica.imprimePorFederado([])
@@ -303,7 +304,7 @@ describe("Hipica.imprimePorFederado: ", function() {
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_VACIO_TODOS)
     })
 })
-
+*/
 describe("Hipica.imprimePorParticipaciones: ", function() {
     it("Mostrar datos nulos cuando le pasamos vector nulo", function() {
         Hipica.imprimePorParticipaciones([])
