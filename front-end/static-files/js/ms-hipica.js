@@ -189,7 +189,7 @@ Hipica.tablaJinetes = {}
  * Muestra los nombres de los campos sobre la información que vamos a representar de los jinetes
  * @type {string}
  */
-Hipica.tablaJinetes.cabecera = `<table width="100%" class="listado_jinetes">
+Hipica.tablaJinetes.cabecera = `<table width="100%" class="listado-personas">
     <thead>
         <th width="5%">ID</th>
         <th width="15%">Nombre</th>
@@ -205,7 +205,7 @@ Hipica.tablaJinetes.cabecera = `<table width="100%" class="listado_jinetes">
  * Muestra los nombres de los campos sobre la información que vamos a representar de los jinetes
  * @type {string}
  */
-Hipica.tablaJinetes.cabeceraJinetesTodos = `<table width="100%" class="listado_jinetes">
+Hipica.tablaJinetes.cabeceraJinetesTodos = `<table width="100%" class="listado-personas">
     <thead>
         <th width="5%">ID</th>
         <th width="15%">Nombre</th>
