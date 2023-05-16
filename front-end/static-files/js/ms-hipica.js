@@ -211,8 +211,8 @@ Hipica.tablaJinetes.cabeceraJinetesTodos = `<table width="100%" class="listado-p
         <th width="15%">Nombre</th>
         <th width="10%">Apellidos</th>
         <th width="10%">Altura</th>      
-        <th width="25%">Datos del caballo</th>
-        <th width="25%">Fecha de nacimiento</th>
+        <th width="10%">Datos del caballo</th>
+        <th width="10%">Fecha de nacimiento</th>
         <th width="15%">Nombre del club</th>
         <th width="10%">Dirección</th>
         <th width="10%">Tipo de competicion</th>
