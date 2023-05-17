@@ -61,19 +61,58 @@ PlantillaTrabajoGeneral.mostrarHome = function (datosDescargados) {
 }
 
 PlantillaTrabajoGeneral.procesarHome = function () {
-    this.descargarRuta("/general/", this.mostrarHome);
+    this.descargarRuta("/plantillaTrabajoGeneral/", this.mostrarHome);
 }
 
-PlantillaTrabajoGeneral.mostrarAcercaDeGeneral = function (datosDescargados){
-    datosDescargados = datosDescargados || this.datosDescargadosNulos
+PlantillaTrabajoGeneral.mostrarAcercaDeGeneral = function (datosCurling, datosGolf, datosHipica){
+    datosCurling = datosCurling || this.datosDescargadosNulos
+    datosGolf = datosGolf || this.datosDescargadosNulos
+    datosHipica = datosHipica || this.datosDescargadosNulos
 
-    if (typeof datosDescargados !== "object") datosDescargados = this.datosDescargadosNulos
+    let datosDescargados = general.datosDescargadosNulos;
+    let aux = true;
 
-    if (typeof datosDescargados.mensaje === "undefined" ||
-        typeof datosDescargados.autor === "undefined" ||
-        typeof datosDescargados.email === "undefined" ||
-        typeof datosDescargados.fecha === "undefined"
-    )datosDescargados = this.datosDescargadosNulos
+
+
+    if (typeof datosCurling !== "object") datosCurling = this.datosDescargadosNulos
+
+    if (typeof datosCurling.mensaje === "undefined" ||
+        typeof datosCurling.autor === "undefined" ||
+        typeof datosCurling.email === "undefined" ||
+        typeof datosCurlings.fecha === "undefined"
+    ){
+        datosCurling = this.datosDescargadosNulos;
+        aux = false
+    }
+
+    if (typeof datosGolf !== "object") datosGolf = this.datosDescargadosNulos
+
+    if (typeof datosGolf.mensaje === "undefined" ||
+        typeof datosGolf.autor === "undefined" ||
+        typeof datosGolf.email === "undefined" ||
+        typeof datosGolf.fecha === "undefined"
+    ){
+        datosGolf = this.datosDescargadosNulos;
+        aux = false
+    }
+
+    if (typeof datosHipica !== "object") datosHipica = this.datosDescargadosNulos
+
+    if (typeof datosHipica.mensaje === "undefined" ||
+        typeof datosHipica.autor === "undefined" ||
+        typeof datosHipica.email === "undefined" ||
+        typeof datosHipica.fecha === "undefined"
+    ){
+        datosHipica = this.datosDescargadosNulos;
+        aux = false
+    }
+
+    if (aux){
+        datosDescargados.mensaje = "Acerca de general";
+        datosDescargados.autor = datosCurling.autor + ", " + datosGolf.autor + ", " + datosHipica.autor;
+        datosDescargados.email = datosCurling.email + ", " + datosGolf.email + ", " + datosHipica.email;
+        datosDescargados.fecha = datosCurling.fecha + ", " + datosGolf.fecha + ", " + datosHipica.fecha;
+    }
 
     const mensajeAMostrar = `<div>
      <p>${datosDescargados.mensaje}</p>
@@ -87,6 +126,6 @@ PlantillaTrabajoGeneral.mostrarAcercaDeGeneral = function (datosDescargados){
     Frontend.Article.actualizar("Mostrar Acerca de general", mensajeAMostrar)
 }
 
-PlantillaTrabajoGeneral.procesarHome = function () {
-    this.descargarRuta("/plantillaCurling/", this.mostrarHome);
+PlantillaTrabajoGeneral.procesarAcercaDe = function () {
+    this.descargarRuta("/plantillaTrabajoGeneral/acercade", this.mostrarAcercaDe);
 }
