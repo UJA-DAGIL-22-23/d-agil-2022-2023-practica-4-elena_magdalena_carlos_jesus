@@ -6,6 +6,7 @@
  */
 
 // SPECS para Jasmine
+
 describe("Frontend.Article.actualizar: ", function () {
     const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
     const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
@@ -55,13 +56,12 @@ describe("Frontend.Article.actualizar: ", function () {
     it("Debe devolver el propio objeto",
         function () {
             // Probamos diversas llamadas con distintos parámetros
-            expect(Frontend.Article.actualizar()).toBe(Frontend.Article) 
+            expect(Frontend.Article.actualizar()).toBe(Frontend.Article)
             expect(Frontend.Article.actualizar(tituloPrueba)).toBe(Frontend.Article)
             expect(Frontend.Article.actualizar(tituloPrueba, contenidoPrueba)).toBe(Frontend.Article)
         })
 
 })
-
 
 describe("Frontend.aniadirClase: ", function () {
     it("no da error con un elemento que NO tiene ninguna clase",
@@ -127,5 +127,5 @@ describe("Frontend.quitarClase: ", function () {
             // Devolvemos el elemento a su estado original:
             Frontend.aniadirClase(elemento, nombreClase)
         })
-})
 
+})

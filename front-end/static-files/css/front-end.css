@@ -10,6 +10,7 @@
 @import url('./ms-golf.css');
 
 
+
 * {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -62,9 +63,12 @@
     max-width: 5em;
     min-width: 5em;
     margin: 0.2em auto 0.2em auto;
+}
+
 nav {
     margin-top: 20px;
 }
+
 
 nav h2 {
     display: inline;

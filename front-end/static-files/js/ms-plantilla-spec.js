@@ -8,6 +8,7 @@
 // SPECS para Jasmine
 
 // Constantes para usar en las pruebas
+
 const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
 const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
 const TITULO_HOME = "Plantilla Home"

@@ -99,10 +99,6 @@ Frontend.Article.aniadirContenido = function (texto) {
 
 
 /**
-=======
->>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
  * Quita a un elemento del cual se pasa él mismo o su ID la clase indicada por nombreClase
  * @param {string} elemento Elemento o id del elemento
  * @param {string} nombreClase Nombre de la clase a quitar
@@ -140,8 +136,6 @@ Frontend.aniadirClase = function (elemento, nombreClase) {
 }
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
  * Muestro el article
  * @returns El propio Article para poder concatenar llamadas
  */
@@ -153,10 +147,6 @@ Frontend.Article.mostrar = function () {
 }
 
 /**
-=======
->>>>>>> 9782102ff5a21e113f8a2d08b73e48515a3a2afa
-=======
->>>>>>> e60caf1585687bb2dfc40396eabf8786d4afdfb0
  * Cambia toda la información del article
  * @param {String} titulo Información para el título del article 
  * @param {String} contenido INformacion para el contenido del article

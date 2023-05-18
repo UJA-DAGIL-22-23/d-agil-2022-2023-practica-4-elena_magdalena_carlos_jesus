@@ -465,6 +465,7 @@ Hipica.imprimeMuchosJinetes = function (vector) {
  * Función para mostrar en pantalla los detalles de una jinete que se ha recuperado de la BBDD por su id
  * @param {jinete} jinete Datos de la jinete a mostrar
  */
+
 Hipica.imprimeUnJinete = function (jinete) {
     if (!jinete || typeof jinete !== "object") {
         elementoTitulo.innerHTML = "Mostrar datos de un jinete";
