@@ -19,8 +19,8 @@ const TITULO_MUESTRA_JUGADOR = "Mostrar un jugador"
 const TITULO_ANIADE_JUGADOR = "Añadir un jugador"
 
 const datosDescargadosPrueba = {
-    const elementoTituloGolf = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
-    const elementoContenidoGolf = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
+    const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
+    const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
     const TITULO_HOME_GOLF = "Golf Home"
     const TITULO_ACERCA_DE_GOLF = "Golf Acerca de"
     const TITULO_NOMBRES_GOLF = "Listado de nombres de los jugadores de Golf"

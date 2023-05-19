@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Aplicación Microservicios</title>
 
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/front-end.css">
 </head>
 <body>
-<h1>Aplicación Microservicios</h1>
+<h1>Aplicación Patinaje</h1>
 
 <!-- Barra de navegación de la aplicación -->
 <nav>
@@ -42,11 +42,8 @@
         <input type="text" id="direccion-input">
         <button onclick="Plantilla.procesarDireccion(document.getElementById('direccion-input').value)">Buscar por Provincia</button>
     </div>
-    <div
 
-
-    <h1>Aplicación Microservicios</h1>
-
+    <div>
     <!-- Barra de navegación de la aplicación -->
     <nav>
         <!-- FUNCIONES DEL MICROSERVICIO DE GOLF -->
@@ -57,6 +54,7 @@
         <a href="javascript:Golf.procesarJugadores()" class="opcion-principal mostrar" title="Llama a la ruta /getTodos del MS Golf">Listar Jugadores</a>
         <a href="javascript:Golf.aniadeJugador()" class="opcion-principal mostrar" title="Llama a la ruta /getTodos del MS Golf">Añadir jugador</a>
     </nav>
+    </div>
     <nav>
         <!-- FUNCIONES DEL MICROSERVICIO DE CURLING -->
         <h2>MS Curling: </h2>
@@ -194,5 +192,6 @@
     <script src="js/ms-hipica-spec.js"></script>
 
 </body>
+</nav>
 
 </html>
