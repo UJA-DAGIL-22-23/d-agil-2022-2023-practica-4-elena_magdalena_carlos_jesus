@@ -19,6 +19,11 @@
 * *NOMBRE* : Jesús
 * *APELLIDOS*: Manzano Álvarez
 * *EMAIL*: jma00068@red.ujaen.es
+* 
+*
+* *NOMBRE* : Carlos
+* *APELLIDOS*: Soto Torres
+* *EMAIL*: cst00015@red.ujaen.es
 
 ### -----------------------------------------------------
 ###  *TABLERO DE TRELLO*
@@ -193,3 +198,43 @@ clases de ms-Curling.js y ms-Curling-spec.js
 
 ###  *HISTORIA DE USUARIO 3*
 ![Resultado de la HU 3](./assets/img/HU_1_Curling.PNG)
+
+
+### PROYECTO PATINAJE
+
+Ahora vamos a hablar sobre las modificaciones que hemos hecho dentro de patinaje para poder unirlo al resto de proyectos
+y trabajos de nuestros compañeros de equipo. Para ellos tuvimos que modificar una serie de clases y carpetas para que todas
+ellas no tuviesen el mismo nombre, y son:
+
+```
+ -  ms-plantilla 
+ -  front-end/static-files/js/ms-plantilla.js
+ -  front-end/static-files/js/ms-plantilla-spec.js
+ -  ms-plantilla/server.js
+ -  api-gateway/proxy-routes.js
+ -  front-end/static-files/index.html
+```
+
+Cada proyecto le ha cambiado el nombre por su deporte, yo lo he dejado como plantilla.
+
+En ms-plantilla/server.js hemos indicado cual es el nuevo puerto. En proxy-router he añadido la ruta de mi trabajo para que se pueda conectar 
+con la clase de front-end, y hemos añadido el siguiente segmente dentro de (const ROUTES):
+
+```
+   {
+        url: '/plantilla',
+        proxy: {
+            target: "http://localhost:8002",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/plantilla`]: '',
+            },
+        }
+    },
+```
+
+Por último en el index hemos añadido nuestro botones que se veran en el html de la página que conectan direcamtne con las 
+clases de ms-plantilla.js y ms-plantilla-spec.js
+
+###  *HISTORIA DE USUARIO 4*
+![Resultado de la HU 4](./assets/img/HU-4.png)
