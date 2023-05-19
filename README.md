@@ -235,5 +235,5 @@ Por último en el index hemos añadido nuestro botones que se veran en el html d
 clases de ms-plantilla.js y ms-plantilla-spec.js
 
 
-###  *HISTORIA DE USUARIO 3*
-![Resultado de la HU 3](./assets/img/HU_1_Curling.PNG)
+###  *HISTORIA DE USUARIO 4*
+![Resultado de la HU 3](./assets/img/HU-4.png)
