@@ -15,9 +15,9 @@ const app = require('../server');
 /**
  * Test para las rutas "estáticas": / y /acerdade
  */
-describe('Servidor patinaje:', () => {
+describe('Servidor plantilla:', () => {
   describe('Rutas / y /acercade', () => {
-    it('Devuelve MS patinaje Home Page', (done) => {
+    it('Devuelve MS plantillae Home Page', (done) => {
       supertest(app)
         .get('/')
         .expect(200)
@@ -25,7 +25,7 @@ describe('Servidor patinaje:', () => {
         .expect(function (res) {
           //console.log( res.body ); // Para comprobar qué contiene exactamente res.body
           assert(res.body.hasOwnProperty('mensaje'));
-          assert(res.body.mensaje === "Microservicio MS patinaje: home");
+          assert(res.body.mensaje === "Microservicio MS plantilla: home");
 
         })
         .end((error) => { error ? done.fail(error) : done() })

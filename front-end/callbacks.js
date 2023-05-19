@@ -1,5 +1,5 @@
 /**
- * @file callbacks.js - 
+ * @file callbacks.js -
  * @description Callbacks para la aplicación front-end.
  * Los callbacks son las funciones que se llaman cada vez que se recibe una petición al servidor que ejecuta el front-end.
  * Las peticiones se reciben en las rutas definidas en routes.js, pero se procesan aquí.

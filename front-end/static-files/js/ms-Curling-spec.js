@@ -162,9 +162,9 @@ describe("PlantillaCurling.TablaCompletaJugadores", function () {
 
 describe ("PlantillaCurling.Ordenamos_Nombres", function () {
     it ("Debe mostras datos nulos en caso de que el vector que se introduzca lo sea", () => {
-            const vector = [];
-            PlantillaCurling.Ordenamos_Nombres(vector);
-            expect(vector).toEqual([])
+        const vector = [];
+        PlantillaCurling.Ordenamos_Nombres(vector);
+        expect(vector).toEqual([])
     });
     it ("Debe poder ordenar un elemento", () => {
         const vector = [{ data: {nombre: 'Sergio'}}];
@@ -173,20 +173,20 @@ describe ("PlantillaCurling.Ordenamos_Nombres", function () {
     });
     /**
      * Como es una funcion asincrona no funciona bien los tdd pero lo dejo aqui
-    it ("Debe devolver -1 en el caso de que el primer objeto vaya despues del primero", function() {
+     it ("Debe devolver -1 en el caso de que el primer objeto vaya despues del primero", function() {
         let vector = [{data:{nombre: 'Sergio'}}, {data:{nombre: 'Anna'}}]
         Plantilla.Ordenamos_Nombres(vector);
         expect(Plantilla.Ordenamos_Nombres(vector)).toBe([{data:{nombre: 'Ana'}}, {data:{nombre: 'Sergio'}}]);
     });
      **/
-     it ("Debe devolver 1 en el caso de que el primer objeto vaya antes del primero", function() {
+    it ("Debe devolver 1 en el caso de que el primer objeto vaya antes del primero", function() {
         let vector = [{data:{nombre: 'Ana'}}, {data:{nombre: 'Sergio'}}]
         PlantillaCurling.Ordenamos_Nombres(vector);
         expect(vector).toEqual([{data:{nombre: 'Ana'}}, {data:{nombre: 'Sergio'}}]);
     });
 
     /**
-    it ("Debe devolver 0 en el caso de que los dos objetos sean iguales", function() {
+     it ("Debe devolver 0 en el caso de que los dos objetos sean iguales", function() {
         let vector = [{data:{nombre: 'Ana'}}, {data:{nombre: 'Ana'}}]
         Plantilla.Ordenamos_Nombres(vector);
         expect(vector).toEqual([{data:{nombre: 'Ana'}}, {data:{nombre: 'Ana'}}]);

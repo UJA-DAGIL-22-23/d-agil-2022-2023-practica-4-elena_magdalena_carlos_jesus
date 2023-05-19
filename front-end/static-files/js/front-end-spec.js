@@ -6,7 +6,6 @@
  */
 
 // SPECS para Jasmine
-
 describe("Frontend.Article.actualizar: ", function () {
     const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
     const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
@@ -62,6 +61,7 @@ describe("Frontend.Article.actualizar: ", function () {
         })
 
 })
+
 
 describe("Frontend.aniadirClase: ", function () {
     it("no da error con un elemento que NO tiene ninguna clase",
@@ -127,5 +127,4 @@ describe("Frontend.quitarClase: ", function () {
             // Devolvemos el elemento a su estado original:
             Frontend.aniadirClase(elemento, nombreClase)
         })
-
 })

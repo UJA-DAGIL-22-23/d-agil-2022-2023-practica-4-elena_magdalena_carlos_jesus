@@ -28,9 +28,9 @@ const ROUTES = [
         }
     },
     {
-        url: '/patinaje',
+        url: '/plantilla',
         proxy: {
-            target: "http://localhost:8001",
+            target: "http://localhost:8002",
             changeOrigin: true,
             pathRewrite: {
                 [`^/patinaje`]: '',

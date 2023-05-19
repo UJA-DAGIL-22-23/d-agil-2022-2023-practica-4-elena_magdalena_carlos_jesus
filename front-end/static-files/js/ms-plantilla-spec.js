@@ -8,7 +8,6 @@
 // SPECS para Jasmine
 
 // Constantes para usar en las pruebas
-
 const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
 const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
 const TITULO_HOME = "Plantilla Home"
@@ -131,14 +130,14 @@ describe("Plantilla.mostrarAcercaDe: ", function () {
 IMPORTANTE
 ==========
 
-Las pruebas TDD que se encargan de probar las conexiones con el microservicio desde el cliente son difíciles de probar 
-dado que requieren solucionar temas de sincronización. 
+Las pruebas TDD que se encargan de probar las conexiones con el microservicio desde el cliente son difíciles de probar
+dado que requieren solucionar temas de sincronización.
 Esto afecta a los métodos:
  - Plantilla.descargarRuta
  - Plantilla.procesarAcercaDe
  - Plantilla.procesarHome
 
- Las soluciones propuestas en distintos sitios web no han producido el resultado esperado, 
+ Las soluciones propuestas en distintos sitios web no han producido el resultado esperado,
  por tanto: para esta práctica, se pueden dejar SIN HACER.
 
  */

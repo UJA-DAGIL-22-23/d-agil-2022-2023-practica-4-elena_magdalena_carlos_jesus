@@ -164,15 +164,15 @@ describe("Hipica.imprimeNombres: ", function() {
     it("muestra datos nulos cuando le pasamos un valor nulo", function() {
         Hipica.imprimeNombres([])
         expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_NOMBRES_JINETES)
-       expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_NULO)
+        expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_NULO)
     })
 
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto", function() {
         Hipica.imprimeNombres(12)
-       expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_NOMBRES_JINETES)
+        expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_NOMBRES_JINETES)
         expect(elementoContenido.querySelector('tbody').innerHTML).toBe(OBJETO_NULO)
-        })
+    })
 })
 
 //TDD PARA HU 4
@@ -193,10 +193,10 @@ describe("Hipica.imprimeMuchosJinetes: ", function() {
 //TDD PARA HU 6
 describe("Hipica.imprimeUnJinete: " , function() {
     it("Mostrar datos nulos cuando le pasamos un valor nulo", function() {
-            let jinete = null;
-            Hipica.imprimeUnJinete(jinete);
-            expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_DATOS_UN_JINETE);
-        })
+        let jinete = null;
+        Hipica.imprimeUnJinete(jinete);
+        expect(elementoTitulo.innerHTML).toBe(TITULO_IMPRIME_DATOS_UN_JINETE);
+    })
 })
 
 //TDD PARA HU 5
