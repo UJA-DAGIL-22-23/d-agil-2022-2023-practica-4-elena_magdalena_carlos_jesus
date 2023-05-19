@@ -14,6 +14,16 @@
 * *NOMBRE* : Magdalena
 * *APELLIDOS*: Bueno Pedrera
 * *EMAIL*: mmbp0003@gmail.com
+* 
+*  
+* *NOMBRE* : Jesús
+* *APELLIDOS*: Manzano Álvarez
+* *EMAIL*: jma00068@red.ujaen.es
+* 
+*
+* *NOMBRE* : Carlos
+* *APELLIDOS*: Soto Torres
+* *EMAIL*: cst00015@red.ujaen.es
 
 ### -----------------------------------------------------
 ###  *TABLERO DE TRELLO*
@@ -35,9 +45,9 @@ En esta primera iteración se han unido los 4 proyectos (práctica 3)
 de los estudiantes que conforman el grupo de trabajo. Para ello los primero
 que hemos hecho ha sido crear una rama para cada integrante, en la cual ha subido
 su anterior proyecto y preparado para la unión. Una vez cualquier fallo ha sido
-solucionado, coenzamos a trabajar en la rama Main de GitHub, en la cual uno por uno
+solucionado, comenzamos a trabajar en la rama Main de GitHub, en la cual uno por uno
 cada desarrollador ha integrado su código con los anteriores.
-Estas han sido las funcioes modificadas: 
+Estas han sido las funciones modificadas: 
 
 ### Proyecto Hípica
 Los archivos modificados para la integración han sido: 
@@ -93,6 +103,60 @@ el acceso al código y los test:
 ###  *HISTORIA DE USUARIO 1*
 ![Resultado de la HU 1](./assets/img/Historia_de_Usuario_1.png)
 
+### Proyecto Golf
+Los archivos modificados para la integración han sido: 
+```
+· ms-golf
+· front-end/static-files/js/ms-golf.js
+· front-end/static-files/js/ms-golf-spec.js
+· ms-golf/server.js
+· api-gateway/proxy-routes.js
+· front-end/static-files/index.html
+```
+Primero modificamos con el nombre la carpeta *ms-plantilla* a *ms-golf*, lo cual no 
+supuso un gran cambio.
+A continuación alteramos el nombre del fichero *ms-golf.js a *ms-golf.js*
+Lo cual supuso modificar todo lo relativo al nombre de la clase en todos los 
+archivos donde fuera relevante, al igual que con *ms-golf-spec.js*
+
+Todos los compañeros compartimos el archicho *ms-golf.css*, por lo que 
+cambié el nombre de *listado-jinetes* a *listado-personas* en la clase *ms-golf.js*.
+
+
+En mi caso en el fichero *ms-golf/server.js* dejé el puerto 8002
+que no interfiere con a  ruta de lor proyectos de mis compañeros.
+```
+    const port = 8002;
+```
+Para que la nueva ruta fuera accesible para el api-gateway compartido entre
+mis copeñeros y yo añadí el siguiente código enlazandolo con mis proyecto Golf 
+en el fichero *api-gateway/proxy-routes.js*
+```
+    {
+        url: '/golf',
+        proxy: {
+            target: "http://localhost:8002",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/golf`]: '',
+            },
+        }
+    }   
+ ```
+
+Por último, para que el usuario tuviera acceso a el contenido de la aplicación
+añadí todas las funcionalidades al archivo *index.html*, y los import que permitían
+el acceso al código y los test: 
+ ```
+    <script src="js/ms-golf.js"></script>
+```
+```
+    <script src="js/ms-golf-spec.js"></script>
+```
+
+###  *HISTORIA DE USUARIO 2*
+![Resultado de la HU 2](./assets/img/Historia_de_Usuario_2.png)
+
 ### PROYECTO CURLING
 
 Ahora vamos a hablar sobre las modificaciones que hemos hecho dentro de Curling para poder unirlo al resto de proyectos
@@ -134,3 +198,43 @@ clases de ms-Curling.js y ms-Curling-spec.js
 
 ###  *HISTORIA DE USUARIO 3*
 ![Resultado de la HU 3](./assets/img/HU_1_Curling.PNG)
+
+
+### PROYECTO PATINAJE
+
+Ahora vamos a hablar sobre las modificaciones que hemos hecho dentro de patinaje para poder unirlo al resto de proyectos
+y trabajos de nuestros compañeros de equipo. Para ellos tuvimos que modificar una serie de clases y carpetas para que todas
+ellas no tuviesen el mismo nombre, y son:
+
+```
+ -  ms-plantilla 
+ -  front-end/static-files/js/ms-plantilla.js
+ -  front-end/static-files/js/ms-plantilla-spec.js
+ -  ms-plantilla/server.js
+ -  api-gateway/proxy-routes.js
+ -  front-end/static-files/index.html
+```
+
+Cada proyecto le ha cambiado el nombre por su deporte, yo lo he dejado como plantilla.
+
+En ms-plantilla/server.js hemos indicado cual es el nuevo puerto. En proxy-router he añadido la ruta de mi trabajo para que se pueda conectar 
+con la clase de front-end, y hemos añadido el siguiente segmente dentro de (const ROUTES):
+
+```
+   {
+        url: '/plantilla',
+        proxy: {
+            target: "http://localhost:8002",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/plantilla`]: '',
+            },
+        }
+    },
+```
+
+Por último en el index hemos añadido nuestro botones que se veran en el html de la página que conectan direcamtne con las 
+clases de ms-plantilla.js y ms-plantilla-spec.js
+
+###  *HISTORIA DE USUARIO 4*
+![Resultado de la HU 4](./assets/img/HU-4.png)
