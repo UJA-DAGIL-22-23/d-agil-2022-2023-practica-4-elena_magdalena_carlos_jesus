@@ -14,6 +14,11 @@
 * *NOMBRE* : Magdalena
 * *APELLIDOS*: Bueno Pedrera
 * *EMAIL*: mmbp0003@gmail.com
+* 
+*  
+* *NOMBRE* : Jesús
+* *APELLIDOS*: Manzano Álvarez
+* *EMAIL*: jma00068@red.ujaen.es
 
 ### -----------------------------------------------------
 ###  *TABLERO DE TRELLO*
@@ -35,9 +40,9 @@ En esta primera iteración se han unido los 4 proyectos (práctica 3)
 de los estudiantes que conforman el grupo de trabajo. Para ello los primero
 que hemos hecho ha sido crear una rama para cada integrante, en la cual ha subido
 su anterior proyecto y preparado para la unión. Una vez cualquier fallo ha sido
-solucionado, coenzamos a trabajar en la rama Main de GitHub, en la cual uno por uno
+solucionado, comenzamos a trabajar en la rama Main de GitHub, en la cual uno por uno
 cada desarrollador ha integrado su código con los anteriores.
-Estas han sido las funcioes modificadas: 
+Estas han sido las funciones modificadas: 
 
 ### Proyecto Hípica
 Los archivos modificados para la integración han sido: 
@@ -92,6 +97,60 @@ el acceso al código y los test:
 
 ###  *HISTORIA DE USUARIO 1*
 ![Resultado de la HU 1](./assets/img/Historia_de_Usuario_1.png)
+
+### Proyecto Golf
+Los archivos modificados para la integración han sido: 
+```
+· ms-golf
+· front-end/static-files/js/ms-golf.js
+· front-end/static-files/js/ms-golf-spec.js
+· ms-golf/server.js
+· api-gateway/proxy-routes.js
+· front-end/static-files/index.html
+```
+Primero modificamos con el nombre la carpeta *ms-plantilla* a *ms-golf*, lo cual no 
+supuso un gran cambio.
+A continuación alteramos el nombre del fichero *ms-golf.js a *ms-golf.js*
+Lo cual supuso modificar todo lo relativo al nombre de la clase en todos los 
+archivos donde fuera relevante, al igual que con *ms-golf-spec.js*
+
+Todos los compañeros compartimos el archicho *ms-golf.css*, por lo que 
+cambié el nombre de *listado-jinetes* a *listado-personas* en la clase *ms-golf.js*.
+
+
+En mi caso en el fichero *ms-golf/server.js* dejé el puerto 8002
+que no interfiere con a  ruta de lor proyectos de mis compañeros.
+```
+    const port = 8002;
+```
+Para que la nueva ruta fuera accesible para el api-gateway compartido entre
+mis copeñeros y yo añadí el siguiente código enlazandolo con mis proyecto Golf 
+en el fichero *api-gateway/proxy-routes.js*
+```
+    {
+        url: '/golf',
+        proxy: {
+            target: "http://localhost:8002",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/golf`]: '',
+            },
+        }
+    }   
+ ```
+
+Por último, para que el usuario tuviera acceso a el contenido de la aplicación
+añadí todas las funcionalidades al archivo *index.html*, y los import que permitían
+el acceso al código y los test: 
+ ```
+    <script src="js/ms-golf.js"></script>
+```
+```
+    <script src="js/ms-golf-spec.js"></script>
+```
+
+###  *HISTORIA DE USUARIO 2*
+![Resultado de la HU 2](./assets/img/Historia_de_Usuario_2.png)
 
 ### PROYECTO CURLING
 
